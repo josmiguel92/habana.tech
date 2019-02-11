@@ -1,0 +1,5 @@
+framework:
+    assets:
+        base_path: ~
+            base_url: ['https://static.vinales.taxi']
+

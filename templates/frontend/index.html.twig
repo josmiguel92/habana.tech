@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello User!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello user!</h1>
+
+
+
+    <div>
+        <h2>{% trans %}Form{% endtrans %}</h2>
+
+        {{ form_start(form) }}
+        <div style="border: solid black 2px; padding: 1em">
+            <h3>Form.lite</h3>
+
+
+            {{ form_row(form.peopleCount) }}
+            {{ form_row(form.pickupTime) }}
+            {{ form_row(form.tourOption) }}
+
+        </div>
+
+        <div style="border: solid black 2px; padding: 1em">
+            <h3>Form.extended</h3>
+            {{ form_row(form.airportPickup) }}
+            {{ form_row(form.flyNumber) }}
+            {{ form_row(form.pickupPlace) }}
+
+            <hr>
+
+            {{ form_row(form.returnTravel) }}
+            {{ form_row(form.returnPickupTime) }}
+            {{ form_row(form.returnPickupPlace) }}
+
+            <hr>
+
+            {{ form_row(form.clientName) }}
+            {{ form_row(form.clientEmail) }}
+            {{ form_row(form.telephone) }}
+        </div>
+
+        {{ form_row(form.bookingLang, {value: app.request.locale}) }}
+        {{ form_row(form.campaign, {value: 'vinales-web-form'}) }}
+
+        <button class="btn">{% trans %}Book.send{% endtrans %}</button>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}

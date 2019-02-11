@@ -1,0 +1,13 @@
+DirectoryIndex index.html
+Options FollowSymlinks
+Header set Access-Control-Allow-Origin "*"
+
+
+<IfModule mod_rewrite.c>
+    RewriteEngine Off
+
+</IfModule>
+
+<FilesMatch ".(eot|ttf|otf|woff|js|css)">
+	Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
