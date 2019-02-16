@@ -14,12 +14,24 @@ use Symfony\Component\Routing\Annotation\Route;
 class BookingController extends AbstractController
 {
     /**
-     * @Route("/backend/booking", name="booking_index", methods={"GET"})
+     * @Route("/backend/booking/", name="booking_index", methods={"GET"})
+     * @Route("/backend/booking/p/{page}", name="booking_index_paged", methods={"GET"}, requirements={"page":"\d+"})
      */
-    public function index(BookingRepository $bookingRepository): Response
+    public function index(BookingRepository $bookingRepository, $page = 1): Response
     {
+        $limit = 10;
+        if($page == 0)
+            $bookings = $bookingRepository->findAll();
+        else
+            $bookings = $bookingRepository->findBy([],['id'=>'DESC'],$limit, ($page-1)*$limit);
+
+        $count = $bookingRepository->count([]);
+        $last_page = $count%$limit;
         return $this->render('backend/booking/index.html.twig', [
-            'bookings' => $bookingRepository->findAll(),
+            'bookings' => $bookings,
+            'page' => $page,
+            'count' => $count,
+            'last_page' => $last_page,
         ]);
     }
 
@@ -93,5 +105,6 @@ class BookingController extends AbstractController
 
         return $this->redirectToRoute('booking_edit');
     }
+
 
 }

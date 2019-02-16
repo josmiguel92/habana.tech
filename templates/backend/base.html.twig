@@ -43,7 +43,7 @@
 <!-- page container area start -->
 <div class="page-container">
     {{ render(controller(
-        'App\\Controller\\BackendController::_sidebar', {'pagename' : 'dashboard'}
+        'App\\Controller\\BackendController::_sidebar', {'pagename' : pagename}
     ))   }}
     <!-- main content area start -->
     <div class="main-content">
@@ -134,20 +134,6 @@
 <script src="{{ asset('assets/js/jquery.slimscroll.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.slicknav.min.js') }}"></script>
 
-<!-- start chart js -->
-<script src="{{ asset('assets/js/vendor/Chart.min.js') }}"></script>
-<!-- start highcharts js -->
-<script src="{{ asset('assets/js/vendor/highcharts.js') }}"></script>
-<!-- start zingchart js -->
-<script src="{{ asset('assets/js/vendor/zingchart.min.js') }}"></script>
-<script>
-    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
-    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
-</script>
-<!-- all line chart activation -->
-<script src="{{ asset('assets/js/line-chart.js') }}"></script>
-<!-- all pie chart -->
-<script src="{{ asset('assets/js/pie-chart.js') }}"></script>
 <!-- others plugins -->
 <script src="{{ asset('assets/js/plugins.js') }}"></script>
 <script src="{{ asset('assets/js/scripts.js') }}"></script>

@@ -1,5 +1,5 @@
 {% extends 'backend/base.html.twig' %}
-
+{% set pagename = 'booking' %}
 {% block title %}New Booking{% endblock %}
 
 {% block breacrumbs %}
@@ -14,5 +14,5 @@
 {% block body %}
     {{ include('backend/booking/_form.html.twig') }}
 
-    <a href="{{ path('backend_booking_new') }}">back to list</a>
+    <a href="{{ path('backend_booking_new') }}">Back to list</a>
 {% endblock %}

@@ -18,7 +18,7 @@ class BookingType extends AbstractType
         $builder
             ->add('peopleCount')
             ->add('pickupDate', DateType::class, ['widget'=>'single_text'])
-            ->add('pickupTime', TimeType::class)
+            ->add('pickupTime', TimeType::class, ['widget'=>'single_text'])
             ->add('tourOption')
 
             ->add('airportPickup')
@@ -31,8 +31,8 @@ class BookingType extends AbstractType
 
             ->add('returnTravel')
             ->add('returnPickupPlace')
-            ->add('returnPickupDate', DateType::class, ['widget'=>'single_text'])
-            ->add('returnPickupTime', TimeType::class)
+            ->add('returnPickupDate', DateType::class, ['widget'=>'single_text', 'required'=>false])
+            ->add('returnPickupTime', TimeType::class, ['widget'=>'single_text', 'required'=>false])
 
             ->add('bookingLang', HiddenType::class)
             ->add('campaign',HiddenType::class)

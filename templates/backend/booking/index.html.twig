@@ -1,5 +1,5 @@
 {% extends 'backend/base.html.twig' %}
-
+{% set pagename = 'booking' %}
 {% block title %}Booking index{% endblock %}
 {% block breacrumbs %}
     <h4 class="page-title pull-left">Bookings</h4>
@@ -8,23 +8,25 @@
         <li><span>Bookings</span></li>
     </ul>
 {% endblock %}
-{% block body %}
 
+{% block body %}
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>BookingTime</th>
+                <th>Id/orderNumber</th>
+                <th>BookingDate</th>
                 <th>AirportPickup</th>
                 <th>FlyNumber</th>
                 <th>Campaign</th>
                 <th>ClientName</th>
                 <th>ClientEmail</th>
                 <th>PickupPlace</th>
+                <th>PickupDate</th>
                 <th>PickupTime</th>
                 <th>BookingLang</th>
                 <th>ReturnTravel</th>
                 <th>ReturnPickupPlace</th>
+                <th>ReturnPickupDate</th>
                 <th>ReturnPickupTime</th>
                 <th>actions</th>
             </tr>
@@ -32,7 +34,7 @@
         <tbody>
         {% for booking in bookings %}
             <tr>
-                <td>{{ booking.id }}</td>
+                <td>{{ booking.id }}/{{ booking.orderNumber }}</td>
                 <td>{{ booking.bookingTime ? booking.bookingTime|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ booking.airportPickup ? 'Yes' : 'No' }}</td>
                 <td>{{ booking.flyNumber }}</td>
@@ -40,11 +42,13 @@
                 <td>{{ booking.clientName }}</td>
                 <td>{{ booking.clientEmail }}</td>
                 <td>{{ booking.pickupPlace }}</td>
-                <td>{{ booking.pickupTime ? booking.pickupTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ booking.pickupDate ? booking.pickupDate|date('Y-m-d') : '' }}</td>
+                <td>{{ booking.pickupTime ? booking.pickupTime|date('H:i:s') : '' }}</td>
                 <td>{{ booking.bookingLang }}</td>
                 <td>{{ booking.returnTravel ? 'Yes' : 'No' }}</td>
                 <td>{{ booking.returnPickupPlace }}</td>
-                <td>{{ booking.returnPickupTime ? booking.returnPickupTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ booking.returnPickupDate ? booking.returnPickupDate|date('Y-m-d') : '' }}</td>
+                <td>{{ booking.returnPickupTime ? booking.returnPickupTime|date('H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('booking_show', {'id': booking.id}) }}">show</a>
                     <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
@@ -58,5 +62,26 @@
         </tbody>
     </table>
 
-    <a href="{{ path('backend_booking_new') }}">Create new</a>
+
+    <a href="{{ path('backend_booking_new') }}" class="pull-right btn-xs btn-primary mb-3">Add new</a>
+
+    <nav aria-label="Pagination" class="row justify-content-md-center">
+        <ul class="pagination">
+            <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                <a class="page-link" href="{{ path('booking_index_paged', {'page':page-1}) }}" tabindex="-1">Previous</a>
+            </li>
+            {% if page > 1 %}
+            <li class="page-item"><a class="page-link" href="{{ path('booking_index_paged', {'page':page-1}) }}">{{ page - 1}}</a></li>
+            {% endif %}
+            <li class="page-item active">
+                <a class="page-link" href="#">{{ page }} <span class="sr-only">(current)</span></a>
+            </li>
+            {% if page < last_page %}
+            <li class="page-item"><a class="page-link" href="{{ path('booking_index_paged', {'page':page+1} ) }}">{{ page +1 }}</a></li>
+            {% endif %}
+            <li class="page-item {% if page == last_page %}disabled{% endif %}">
+                <a class="page-link" href="{{ path('booking_index_paged', {'page':page+1}) }}">Next</a>
+            </li>
+        </ul>
+    </nav>
 {% endblock %}

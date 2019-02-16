@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BookingRepository")
  * @Assert\Expression("this.getThirdCheckValue() in [this.CheckValue]",
- *     message="The value {{this.CheckValue}}.....")
+ *     message="The value of validation is not correct")
  */
 class Booking
 {
@@ -63,6 +63,7 @@ class Booking
      * @ORM\Column(type="date")
      */
     private $pickupDate;
+    //TODO: solo son validas fechas futuras
 
 
     /**
@@ -127,6 +128,31 @@ class Booking
     private $telephone;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $orderNumber;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $Price;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $UserConfirmed;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $TaxiConfirmed;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $IsDone;
+
+    /**
      * @return int
      */
     public function getCheckValue()
@@ -137,6 +163,7 @@ class Booking
     public function __construct()
     {
         $this->bookingTime = new \DateTime();
+        $this->orderNumber = substr(uniqid("v-".date("ymd")),0,10);
         //check the user/javascript send the form
 
         $this->firstCheckValue = rand(1,100);
@@ -311,7 +338,9 @@ class Booking
      */
     public function getFirstCheckValue(): int
     {
-        return $this->firstCheckValue;
+        if($this->firstCheckValue)
+            return $this->firstCheckValue;
+        return rand(1,100);
     }
 
     /**
@@ -327,7 +356,9 @@ class Booking
      */
     public function getSecondCheckValue(): int
     {
-        return $this->secondCheckValue;
+        if($this->secondCheckValue)
+            return $this->secondCheckValue;
+        return rand(1,100);
     }
 
     /**
@@ -343,7 +374,9 @@ class Booking
      */
     public function getThirdCheckValue(): int
     {
-        return $this->thirdCheckValue;
+        if($this->thirdCheckValue)
+            return $this->thirdCheckValue;
+        return rand(1,100);
     }
 
     /**
@@ -420,6 +453,66 @@ class Booking
     public function setReturnPickupDate($returnPickupDate): void
     {
         $this->returnPickupDate = $returnPickupDate;
+    }
+
+    public function getOrderNumber(): ?string
+    {
+        return $this->orderNumber;
+    }
+
+    public function setOrderNumber(string $orderNumber): self
+    {
+        $this->orderNumber = $orderNumber;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->Price;
+    }
+
+    public function setPrice(float $Price): self
+    {
+        $this->Price = $Price;
+
+        return $this;
+    }
+
+    public function getUserConfirmed(): ?bool
+    {
+        return $this->UserConfirmed;
+    }
+
+    public function setUserConfirmed(bool $UserConfirmed): self
+    {
+        $this->UserConfirmed = $UserConfirmed;
+
+        return $this;
+    }
+
+    public function getTaxiConfirmed(): ?bool
+    {
+        return $this->TaxiConfirmed;
+    }
+
+    public function setTaxiConfirmed(bool $TaxiConfirmed): self
+    {
+        $this->TaxiConfirmed = $TaxiConfirmed;
+
+        return $this;
+    }
+
+    public function getIsDone(): ?bool
+    {
+        return $this->IsDone;
+    }
+
+    public function setIsDone(bool $IsDone): self
+    {
+        $this->IsDone = $IsDone;
+
+        return $this;
     }
 
 

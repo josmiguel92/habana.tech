@@ -13,11 +13,12 @@
                         <a href="{{ path('backend_dashboard') }}"><i class="ti-dashboard"></i><span>dashboard</span></a>
                     </li>
 
-                    <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-exclamation-triangle"></i>
+                    <li {% if pagename == 'booking' %}class="active"{% endif %}>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-book"></i>
                             <span>Bookings</span></a>
                         <ul class="collapse">
                             <li><a href="{{ path('booking_index') }}">View all</a></li>
+                            <li><a href="{{ path('booking_index') }}">Calendar</a></li>
                             <li><a href="{{ path('backend_booking_new') }}">Add new</a></li>
 
 
@@ -30,7 +31,7 @@
                         <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-exclamation-triangle"></i>
                             <span>Error</span></a>
                         <ul class="collapse">
-                            <li><a href="#">Logs</a></li>
+                            <li><#ogs</a></li>
                             <li><a href="#" aria-expanded="true">Error pages</a>
                                 <ul class="collapse">
                                     <li><a href="{{ path('_twig_error_test', {'code': 404}) }}">Error 404</a></li>
