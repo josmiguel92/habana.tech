@@ -1,58 +1,212 @@
-{% extends 'base.html.twig' %}
+{% extends 'frontend/base.html.twig' %}
 
-{% block title %}Hello User!{% endblock %}
+{% block title %}{% trans %}Index.title{% endtrans %}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <main class="main">
+        <div class="main__image">
+            <picture>
+                <source media="(min-width: 800px)" srcset="{{ asset('img/main.jpg') }}">
+                <!-- img tag for browsers that do not support picture element -->
+                <img src="{{ asset('img/main_portraid.jpg') }}" alt="">
+            </picture>
+        </div>
+        <div class="main__content">
 
-<div class="example-wrapper">
-    <h1>Hello user!</h1>
+            <div class="main__content__text">
 
+                <div class="main__content__text__title">
+                    <h1 class="title title--white title--big">
+                        Taxi <small>to</small> Vinales
+                    </h1>
+                </div>
 
+                <div class="main__content__text__subtext">
+                    <span>Timeliness</span>
+                    <span>Secure</span>
+                    <span>Fast</span>
+                    <span>Comfortable</span>
+                </div>
 
-    <div>
-        <h2>{% trans %}Form{% endtrans %}</h2>
+            </div>
 
-        {{ form_start(form) }}
-        <div style="border: solid black 2px; padding: 1em">
-            <h3>Form.lite</h3>
+            <div class="main__content__button">
+                <a class="btn btn--primary-gradient" href="form.html">Make a Reservation</a>
+            </div>
+        </div>
+    </main>
 
+    <section id="why_with_us" class="why_with_us section">
 
-            {{ form_row(form.peopleCount) }}
-            {{ form_row(form.pickupDate) }}
-            {{ form_row(form.pickupTime) }}
-            {{ form_row(form.tourOption) }}
+        <div class="section__description">
+            <div class="title title--center">
+                <h2>Why with us?</h2>
+            </div>
+            <div class="section__description__text">
+                <p>Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit.
+                </p>
+            </div>
 
         </div>
 
-        <div style="border: solid black 2px; padding: 1em">
-            <h3>Form.extended</h3>
-            {{ form_row(form.airportPickup) }}
-            {{ form_row(form.flyNumber) }}
-            {{ form_row(form.pickupPlace) }}
 
-            <hr>
 
-            {{ form_row(form.returnTravel) }}
-            {{ form_row(form.returnPickupDate) }}
-            {{ form_row(form.returnPickupTime) }}
-            {{ form_row(form.returnPickupPlace) }}
+        <div class="why_with_us__cards">
 
-            <hr>
+            <div class="why_with_us__cards__item">
+                <div class="why_with_us__cards__item__text">
+                    <p>In the <b>TOP FIVE</b> for more than a
+                        <b>YEAR</b> in <b><a href="">TRIPADVISOR</a></b></p>
+                </div>
+            </div>
 
-            {{ form_row(form.clientName) }}
-            {{ form_row(form.clientEmail) }}
-            {{ form_row(form.telephone) }}
+            <div class="why_with_us__cards__item">
+                <div class="why_with_us__cards__item__text">
+                    <p>We offer  <b>TIMELINESS</b> with a
+                        <b>COMPETITIVE PRICE</b>
+                        and <b>CONFORT</b></p>
+                </div>
+            </div>
+
+            <div class="why_with_us__cards__item">
+                <div class="why_with_us__cards__item__text">
+                    <p>We can make a reservation in advance for
+                        <b>HORSE RIDING</b> or <b>DIVING</b>
+                        and also <b>LUNCH</b>
+                        making a unique experience</p>
+                </div>
+            </div>
+
+            <div class="why_with_us__cards__item">
+                <div class="why_with_us__cards__item__text">
+                    <p> <b>BABIES</b>...  <b>WHEAL-CHAIR</b>...
+                        with not additional cost</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="activities" class="activities section">
+
+        <div class="title title--center">
+            <h2>What you can do?</h2>
         </div>
 
-        {{ form_row(form.bookingLang, {value: app.request.locale}) }}
-        {{ form_row(form.campaign, {value: 'vinales-web-form'}) }}
+        <div class="activities__item">
+            <div class="activities__item__image">
+                <img src="{{ asset('img/1.jpg') }}" alt="">
+            </div>
+            <div class="activities__item__text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at consequuntur eos ex facere fugit iste iusto minus molestias necessitatibus nemo porro qui quibusdam saepe, sint sit ut vel velit?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores at dicta, dignissimos distinctio, incidunt, inventore iure laudantium provident quae quibusdam recusandae suscipit ut? At eius exercitationem quisquam quo rerum?</p>
+            </div>
+        </div>
 
-        <button class="btn">{% trans %}Book.send{% endtrans %}</button>
-        {{ form_end(form) }}
-    </div>
-</div>
+        <div class="activities__item activities__item--inverse">
+            <div class="activities__item__image">
+                <img src="{{ asset('img/2.jpg') }}" alt="">
+            </div>
+            <div class="activities__item__text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur eligendi harum maxime nihil nostrum pariatur quia, quidem ratione rem voluptatibus? Deleniti dolorum excepturi, ipsam nesciunt nulla obcaecati repellendus voluptatem voluptatibus?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores at dicta, dignissimos distinctio, incidunt, inventore iure laudantium provident quae quibusdam recusandae suscipit ut? At eius exercitationem quisquam quo rerum?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at consequuntur eos ex facere fugit iste iusto minus molestias necessitatibus nemo porro qui quibusdam saepe, sint sit ut vel velit?</p>
+            </div>
+        </div>
+
+        <div class="activities__item">
+            <div class="activities__item__image">
+                <img src="{{ asset('img/3.jpg') }}" alt="">
+            </div>
+            <div class="activities__item__text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at consequuntur eos ex facere fugit iste iusto minus molestias necessitatibus nemo porro qui quibusdam saepe, sint sit ut vel velit?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores at dicta, dignissimos distinctio, incidunt, inventore iure laudantium provident quae quibusdam recusandae suscipit ut? At eius exercitationem quisquam quo rerum?</p>
+            </div>
+        </div>
+
+        <div class="activities__button">
+            <a class="btn btn--primary-gradient" href="form.html">
+                Reservar
+            </a>
+        </div>
+    </section>
+
+    <section id="more_places" class="more_places parallax  section section--no-margin">
+
+        <div class="more_places__content">
+            <div class="more_places__content__title">
+                <h2 class="title title--white title--big title--center">
+                    Did you need more?
+                </h2>
+            </div>
+            <div class="more_places__content__places">
+                <ul>
+                    <li><a href="">Airport</a></li>
+                    <li><a href="">Varadero</a></li>
+                    <li><a href="">Cayo Santa Maria</a></li>
+                    <li><a href="">Cienfuegos</a></li>
+                    <li><a href="">Trinidad</a></li>
+                </ul>
+            </div>
+            <div class="more_places__content__button">
+                <a class="btn btn--secundary-gradient" href="#">
+                    See other destinations
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact" class="contact_faq">
+
+        <div class="title title--center">
+            <h2>Contact & FAQ</h2>
+        </div>
+
+        <div class="contact_faq__content">
+
+            <div class="contact_faq__content__faq">
+                <h4>Frequently Askly questions</h4>
+                <ul>
+                    <li>
+                        Can i pay with a transaction?
+                        <p>yes</p>
+                    </li>
+                    <li>
+                        The Tour to Vinales from Havana includes the return.
+                        <p>Yes we can leave you at the same place we pick you up or the place you want in Havana</p>
+                    </li>
+                    <li>Do you pick me up from Cruise or Airport
+                        <p>
+                            Yes, you only need to check this option in the <a href="">RESERVATION FORM</a>.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact_faq__content__contact">
+                <h4>Send us a message</h4>
+
+                <form action="" class="form">
+                    <div class="form__item">
+                        <label for="name">Your name</label>
+                        <input id="name" type="text" placeholder="your name" required>
+                    </div>
+                    <div class="form__item">
+                        <label for="email">Your email</label>
+                        <input id="email" type="email" placeholder="your email" required>
+                    </div>
+                    <div class="form__item">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" cols="30" rows="4" required></textarea>
+                    </div>
+                    <input class="btn btn--secundary-gradient" type="submit" value="Send message">
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+
 {% endblock %}

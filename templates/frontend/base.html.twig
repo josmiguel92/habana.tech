@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
+        {% endblock %}
+        {% block javascripts_defer %}
+            <script src="{{ asset('scripts/app.js') }}" defer></script>
+        {% endblock %}
+    </head>
+
+    <body>
+    <header class="header">
+
+        <div class="logo">
+            <a href="/">
+                <img src="{{ asset('img/logo.png') }}" alt="Vinales in taxi">
+            </a>
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#why_with_us">Us</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#more_places">More places</a></li>
+                <li><a href="#contact">Contact & FAQ</a></li>
+                <li class="nav--special"><a href="#">Make a Reservation</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    {% block body %}{% endblock %}
+
+    <footer class="footer">
+        <div class="footer__image">
+            <picture>
+                <source media="(min-width: 800px)" srcset="{{ asset('img/footer.jpg') }}">
+                <!-- img tag for browsers that do not support picture element -->
+                <img src="{{ asset('img/footer_portraid.jpg') }}" alt="">
+            </picture>
+        </div>
+
+        <div class="footer__contact">
+
+        </div>
+
+    </footer>
+
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

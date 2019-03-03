@@ -7,8 +7,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BookingRepository")
- * @Assert\Expression("this.getThirdCheckValue() in [this.CheckValue]",
- *     message="The value of validation is not correct")
  */
 class Booking
 {
@@ -25,14 +23,14 @@ class Booking
     private $bookingTime;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="string", length=250, nullable=false)
      */
-    private $airportPickup;
+    private $pickupPlace;
 
     /**
-     * @ORM\Column(type="string", length=15, nullable=true)
+     * @ORM\Column(type="string", length=600, nullable=false)
      */
-    private $flyNumber;
+    private $pickupDetails;
 
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
@@ -48,11 +46,6 @@ class Booking
      * @ORM\Column(type="string", length=255)
      */
     private $clientEmail;
-
-    /**
-     * @ORM\Column(type="string", length=800, nullable=true)
-     */
-    private $pickupPlace;
 
     /**
      * @ORM\Column(type="time")
@@ -72,55 +65,9 @@ class Booking
     private $bookingLang;
 
     /**
-     * @ORM\Column(type="boolean", nullable=true)
-     */
-    private $returnTravel;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $returnPickupPlace;
-
-    /**
-     * @ORM\Column(type="time", nullable=true)
-     */
-    private $returnPickupTime;
-
-
-    /**
-     * @ORM\Column(type="date", nullable=true)
-     */
-    private $returnPickupDate;
-
-    /**
-     * @var int $thirdCheckValue
-     */
-    private $firstCheckValue;
-
-    /**
-     * @var int $thirdCheckValue
-     **/
-
-    /**
-     * @var int $thirdCheckValue
-     **/
-    private $secondCheckValue;
-
-    /**
-     * @var int $thirdCheckValue
-     */
-    private $thirdCheckValue;
-    public $CheckValue;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $peopleCount;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $tourOption;
 
     /**
      * @ORM\Column(type="string", length=20, nullable=true)
@@ -153,33 +100,31 @@ class Booking
     private $IsDone;
 
     /**
-     * @return int
+     * @return mixed
      */
-    public function getCheckValue()
+    public function getClientMessage()
     {
-        return $this->CheckValue;
+        return $this->clientMessage;
     }
+
+    /**
+     * @param mixed $clientMessage
+     */
+    public function setClientMessage($clientMessage): void
+    {
+        $this->clientMessage = $clientMessage;
+    }
+
+    /**
+     * @ORM\Column(type="string", length=600, nullable=true)
+     */
+    private $clientMessage;
+
 
     public function __construct()
     {
         $this->bookingTime = new \DateTime();
-        $this->orderNumber = substr(uniqid("v-".date("ymd")),0,10);
-        //check the user/javascript send the form
-
-        $this->firstCheckValue = rand(1,100);
-        $this->secondCheckValue = rand(1,100);
-
-        //TODO: dejar valor rand en thirdCheckValue
-        $this->thirdCheckValue = $this->firstCheckValue * $this->secondCheckValue;
-        //$this->thirdCheckValue = rand(1,100);
-
-        if(isset($_SESSION['formTXCheckValue']))
-        {
-            $this->CheckValue = $_SESSION['formTXCheckValue'];
-
-        }
-        $_SESSION['formTXCheckValue'] = $this->firstCheckValue * $this->secondCheckValue;
-        //echo  $this->thirdCheckValue ."|". $this->getCheckValue();
+        $this->orderNumber = "vin-".date("md").substr(uniqid(),8,6);
 
     }
 
@@ -197,30 +142,6 @@ class Booking
     public function setBookingTime(\DateTimeInterface $bookingTime): self
     {
         $this->bookingTime = $bookingTime;
-
-        return $this;
-    }
-
-    public function getAirportPickup(): ?bool
-    {
-        return $this->airportPickup;
-    }
-
-    public function setAirportPickup(?bool $airportPickup): self
-    {
-        $this->airportPickup = $airportPickup;
-
-        return $this;
-    }
-
-    public function getFlyNumber(): ?string
-    {
-        return $this->flyNumber;
-    }
-
-    public function setFlyNumber(?string $flyNumber): self
-    {
-        $this->flyNumber = $flyNumber;
 
         return $this;
     }
@@ -297,95 +218,6 @@ class Booking
         return $this;
     }
 
-    public function getReturnTravel(): ?bool
-    {
-        return $this->returnTravel;
-    }
-
-    public function setReturnTravel(?bool $returnTravel): self
-    {
-        $this->returnTravel = $returnTravel;
-
-        return $this;
-    }
-
-    public function getReturnPickupPlace(): ?string
-    {
-        return $this->returnPickupPlace;
-    }
-
-    public function setReturnPickupPlace(?string $returnPickupPlace): self
-    {
-        $this->returnPickupPlace = $returnPickupPlace;
-
-        return $this;
-    }
-
-    public function getReturnPickupTime(): ?\DateTimeInterface
-    {
-        return $this->returnPickupTime;
-    }
-
-    public function setReturnPickupTime(?\DateTimeInterface $returnPickupTime): self
-    {
-        $this->returnPickupTime = $returnPickupTime;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getFirstCheckValue(): int
-    {
-        if($this->firstCheckValue)
-            return $this->firstCheckValue;
-        return rand(1,100);
-    }
-
-    /**
-     * @param int $firstCheckValue
-     */
-    public function setFirstCheckValue(int $firstCheckValue): void
-    {
-        $this->firstCheckValue = $firstCheckValue;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSecondCheckValue(): int
-    {
-        if($this->secondCheckValue)
-            return $this->secondCheckValue;
-        return rand(1,100);
-    }
-
-    /**
-     * @param int $secondCheckValue
-     */
-    public function setSecondCheckValue(int $secondCheckValue): void
-    {
-        $this->secondCheckValue = $secondCheckValue;
-    }
-
-    /**
-     * @return int
-     */
-    public function getThirdCheckValue(): int
-    {
-        if($this->thirdCheckValue)
-            return $this->thirdCheckValue;
-        return rand(1,100);
-    }
-
-    /**
-     * @param int $thirdCheckValue
-     */
-    public function setThirdCheckValue(int $thirdCheckValue): void
-    {
-        $this->thirdCheckValue = $thirdCheckValue;
-    }
 
     public function getPeopleCount(): ?int
     {
@@ -395,18 +227,6 @@ class Booking
     public function setPeopleCount(int $peopleCount): self
     {
         $this->peopleCount = $peopleCount;
-
-        return $this;
-    }
-
-    public function getTourOption(): ?bool
-    {
-        return $this->tourOption;
-    }
-
-    public function setTourOption(bool $tourOption): self
-    {
-        $this->tourOption = $tourOption;
 
         return $this;
     }
@@ -437,22 +257,6 @@ class Booking
     public function setPickupDate($pickupDate): void
     {
         $this->pickupDate = $pickupDate;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReturnPickupDate()
-    {
-        return $this->returnPickupDate;
-    }
-
-    /**
-     * @param mixed $returnPickupDate
-     */
-    public function setReturnPickupDate($returnPickupDate): void
-    {
-        $this->returnPickupDate = $returnPickupDate;
     }
 
     public function getOrderNumber(): ?string
@@ -514,6 +318,23 @@ class Booking
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPickupDetails()
+    {
+        return $this->pickupDetails;
+    }
+
+    /**
+     * @param mixed $pickupDetails
+     */
+    public function setPickupDetails($pickupDetails): void
+    {
+        $this->pickupDetails = $pickupDetails;
+    }
+
 
 
 

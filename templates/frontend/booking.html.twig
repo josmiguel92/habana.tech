@@ -1,0 +1,97 @@
+{% extends('frontend/base.html.twig') %}
+
+{% block body %}
+<section class="section reservation">
+    <div class="title title--center">
+        <h1>Reservation Form 🎫</h1>
+    </div>
+
+    <div class="reservation__content">
+        {{ form_start(form, {'attr': {'class': 'reservation__content__form'} }) }}
+            <div class="reservation__content__form__group">
+                <h2>Pickup place?</h2>
+
+                <div class="reservation__content__form__group__single place">
+                    {{ form_row(form.pickupPlace) }}
+                </div>
+
+                <div class="reservation__content__form__group__single">
+
+                    <div class="form__item">
+                        <label for="{{ form.pickupDetails.vars.id }}">{% trans %}Address{% endtrans %}</label>
+                        {{ form_widget(form.pickupDetails) }}
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="reservation__content__form__division"></div>
+
+            <div class="reservation__content__form__group">
+                <h2>Pickup time?</h2>
+
+                <div class="reservation__content__form__group__single time">
+
+                    <div class="form__item">
+                        {{ form_row(form.pickupDate) }}
+                    </div>
+
+                    <div class="form__item">
+                        {{ form_row(form.pickupTime) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="reservation__content__form__division"></div>
+
+            <div class="reservation__content__form__group">
+                <h2>Other details</h2>
+
+                <div class="reservation__content__form__group__single passenger_price">
+                    <div class="form__item">
+                        {{ form_row(form.peopleCount) }}
+                    </div>
+
+                    <div class="form__item">
+                        <span><b>PRICE:</b> 250 USD</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="reservation__content__form__division"></div>
+
+            <div class="reservation__content__form__group">
+                <h2>How we can contact with you?</h2>
+
+                <div class="reservation__content__form__group__single time">
+
+                    <div class="form__item">
+                        {{ form_row(form.clientName) }}
+                    </div>
+
+                    <div class="form__item">
+
+                        {{ form_row(form.clientEmail) }}
+                    </div>
+
+                </div>
+
+
+                <div class="form__item">
+                    {{ form_row(form.clientMessage, {'attr':{'cols':30, 'rows':5}}) }}
+                </div>
+            </div>
+
+
+            {{ form_row(form.bookingLang, {value: app.request.locale}) }}
+            {{ form_row(form.campaign, {value: 'vinales-web-form'}) }}
+            <input class="btn btn--secundary-gradient" type="submit" value="{% trans %}Book.send{% endtrans %}">
+        {{ form_end(form) }}
+    </div>
+</section>
+
+
+{% endblock body %}
