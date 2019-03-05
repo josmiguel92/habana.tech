@@ -52,7 +52,7 @@ class BookingController extends AbstractController
          //   $entityManager->flush();
 
 
-            $message = (new \Swift_Message('Nueva reserva en Vinales.taxi'))
+            $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getId()))
                 ->setFrom('booking@taxidriverscuba.com')
                 ->setTo('taxidriverscuba@gmail.com')
                 ->setCc('josmiguel92@gmail.com')
