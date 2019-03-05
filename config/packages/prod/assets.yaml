@@ -1,5 +1,5 @@
 framework:
     assets:
-        base_path: ~
-            base_url: ['https://static.vinales.taxi']
+        base_path: 'static'
+        #base_url: 'http://static.vinales.test'
 
