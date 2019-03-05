@@ -39,7 +39,7 @@ class BookingController extends AbstractController
      * @Route("/booking/new", name="booking_new", methods={"GET","POST"})
      * @Route("/backend/booking/new", name="backend_booking_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, \Swift_Mailer $mailer): Response
     {
         $booking = new Booking();
         $form = $this->createForm(BookingType::class, $booking);
@@ -47,13 +47,40 @@ class BookingController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($booking);
-            $entityManager->flush();
+            //TODO: en prod. no se ha creado el schem
+         //   $entityManager->persist($booking);
+         //   $entityManager->flush();
+
+
+            $message = (new \Swift_Message('Nueva reserva en Vinales.taxi'))
+                ->setFrom('booking@taxidriverscuba.com')
+                ->setTo('taxidriverscuba@gmail.com')
+                ->setCc('josmiguel92@gmail.com')
+                ->setBody(
+                    $this->renderView(
+                    // templates/emails/registration.html.twig
+                        'emails/bookingNotification.html.twig',
+                        ['booking' => $booking]
+                    ),
+                    'text/html'
+                )
+                /*
+                 * If you also want to include a plaintext version of the message
+                ->addPart(
+                    $this->renderView(
+                        'emails/registration.txt.twig',
+                        ['name' => $name]
+                    ),
+                    'text/plain'
+                )
+                */
+            ;
+
+            $mailer->send($message);
 
             return $this->redirectToRoute('booking_index');
         }
 
-        dump($request);
         return $this->render('backend/booking/new.html.twig', [
             'booking' => $booking,
             'form' => $form->createView(),

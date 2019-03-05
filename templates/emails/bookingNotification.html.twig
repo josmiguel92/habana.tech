@@ -1,0 +1,64 @@
+    <h1>Nueva reserva en Vinales.taxi.</h1>
+    <h2>Aún el cliente no ha recibido confirmación. Debera enviarle un mensaje</h2>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id/orderNumber</th>
+                <td>{{ booking.id }}/{{ booking.orderNumber }}</td>
+            </tr>
+            <tr>
+                <th>BookingTime</th>
+                <td>{{ booking.bookingTime ? booking.bookingTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AirportPickup</th>
+                <td>{{ booking.airportPickup ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>FlyNumber</th>
+                <td>{{ booking.flyNumber }}</td>
+            </tr>
+            <tr>
+                <th>Campaign</th>
+                <td>{{ booking.campaign }}</td>
+            </tr>
+            <tr>
+                <th>ClientName</th>
+                <td>{{ booking.clientName }}</td>
+            </tr>
+            <tr>
+                <th>ClientEmail</th>
+                <td>{{ booking.clientEmail }}</td>
+            </tr>
+            <tr>
+                <th>PickupPlace</th>
+                <td>{{ booking.pickupPlace }}</td>
+            </tr>
+            <tr>
+                <th>PickupTime</th>
+                <td>{{ booking.pickupTime ? booking.pickupTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>BookingLang</th>
+                <td>{{ booking.bookingLang }}</td>
+            </tr>
+            <tr>
+                <th>ReturnTravel</th>
+                <td>{{ booking.returnTravel ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>ReturnPickupPlace</th>
+                <td>{{ booking.returnPickupPlace }}</td>
+            </tr>
+            <tr>
+                <th>ReturnPickupTime</th>
+                <td>{{ booking.returnPickupTime ? booking.returnPickupTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ absolute_url('booking_index') }}">Ver todas las reservast</a>
+
+    <a href="{{ absolute_url('booking_edit', {'id': booking.id}) }}">Edit</a>
+
