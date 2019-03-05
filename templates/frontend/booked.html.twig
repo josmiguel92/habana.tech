@@ -1,0 +1,36 @@
+{% extends 'frontend/base.html.twig' %}
+
+{% block title %}{% trans %}Your booking have been saved{% endtrans %}{% endblock %}
+
+{% block body %}
+    <main class="main">
+        <div class="main__image">
+            <picture>
+                <source media="(min-width: 800px)" srcset="{{ asset('img/main.jpg') }}">
+                <!-- img tag for browsers that do not support picture element -->
+                <img src="{{ asset('img/main_portraid.jpg') }}" alt="">
+            </picture>
+        </div>
+        <div class="main__content">
+
+            <div class="main__content__text">
+
+                <div class="main__content__text__title">
+                    <h1 class="title title--white title--big">
+                        Taxi <small>to</small> Vinales
+                    </h1>
+                </div>
+
+                <div class="main__content__text__subtext">
+                   <p>Your request have been save. We'll contact you soon to confirm it. Thanks and have a nice day.</p>
+                </div>
+
+            </div>
+
+            <div class="main__content__button">
+                <a class="btn btn--primary-gradient" href="{{ path('booking') }}">Make other Reservation</a>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

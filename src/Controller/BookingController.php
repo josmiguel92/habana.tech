@@ -77,8 +77,10 @@ class BookingController extends AbstractController
             ;
 
             $mailer->send($message);
+            return $this->render('frontend/booked.html.twig', [
+            ]);
 
-            return $this->redirectToRoute('booking_index');
+            //return $this->redirectToRoute('booking_index');
         }
 
         return $this->render('backend/booking/new.html.twig', [
