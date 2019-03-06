@@ -48,11 +48,11 @@ class BookingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             //TODO: en prod. no se ha creado el schem
-         //   $entityManager->persist($booking);
-         //   $entityManager->flush();
+            $entityManager->persist($booking);
+            $entityManager->flush();
 
 
-            $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getId()))
+            $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getOrderNumber()))
                 ->setFrom('booking@taxidriverscuba.com')
                 ->setTo('taxidriverscuba@gmail.com')
                 ->setCc('josmiguel92@gmail.com')
