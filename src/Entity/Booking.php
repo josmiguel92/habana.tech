@@ -124,7 +124,7 @@ class Booking
     public function __construct()
     {
         $this->bookingTime = new \DateTime();
-        $this->orderNumber = "vin-".date("md").substr(uniqid(),8,6);
+        $this->orderNumber = "vin-".date("md")."-".substr(uniqid(),8,4);
 
     }
 
