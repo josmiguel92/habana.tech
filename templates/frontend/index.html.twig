@@ -3,211 +3,291 @@
 {% block title %}{% trans %}Index.title{% endtrans %}{% endblock %}
 
 {% block body %}
-    <main class="main">
-        <div class="main__image">
-            <picture>
-                <source media="(min-width: 800px)" srcset="{{ asset('img/main.jpg') }}">
-                <!-- img tag for browsers that do not support picture element -->
-                <img src="{{ asset('img/main_portraid.jpg') }}" alt="">
-            </picture>
-        </div>
-        <div class="main__content">
+   
+           <main class="main">
 
-            <div class="main__content__text">
+            <div class="main__image">
+                <picture>
+                    <source media="(min-width: 800px)" srcset="{{ asset('img/main.jpg') }}">
+                    <!-- img tag for browsers that do not support picture element -->
+                    <img src="{{ asset('img/main_portraid.jpg') }}" alt="">
+                </picture>
+            </div>
+            <div class="main__content">
 
-                <div class="main__content__text__title">
-                    <h1 class="title title--white title--big">
-                        Taxi <small>to</small> Vinales
-                    </h1>
+                <div class="main__content__text">
+
+                    <div class="main__content__text__title">
+                        <h1 class="title title--white title--big">
+                            One day in Vinales <br>
+                            with classic cars
+                        </h1>
+                    </div>
+
+                    <div class="main__content__text__subtext">
+                        <span>Preciseness</span>
+                        <span>Reliability</span>
+                        <span>Comfort</span>
+                    </div>
+
                 </div>
 
-                <div class="main__content__text__subtext">
-                    <span>Timeliness</span>
-                    <span>Securess</span>
-                    <span>Fast</span>
-                    <span>Comfortable</span>
+                <div class="main__content__button">
+                    <a class="btn btn--primary-gradient" href="{{ path('booking') }}">Make a Reservation</a>
+                </div>
+            </div>
+        </main>
+
+        <section id="why_with_us" class="why_with_us section">
+
+            <div class="section__description">
+                <div class="title title--center">
+                    <h2>Why with us?</h2>
+                </div>
+                <div class="section__description__text">
+                    <p>
+                        There are many options out there, but ...
+                    </p>
                 </div>
 
             </div>
 
-            <div class="main__content__button">
-                <a class="btn btn--primary-gradient" href="{{ path('booking') }}">Make a Reservation</a>
+            <div class="why_with_us__cards">
+
+                <div class="why_with_us__cards__item">
+                    <div class="why_with_us__cards__item__text">
+                        <p>We have been in the top five of
+                            <a target="_blank" href="https://www.tripadvisor.com/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html">
+                                    <b>TRIPADVISOR</b>
+                            </a>
+                            for more than a year.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="why_with_us__cards__item">
+                    <div class="why_with_us__cards__item__text">
+                        <p>We offer <b>PUNCTUALITY</b> with a
+                            <b>COMPETITIVE PRICE</b>
+                            and <b>COMFORT</b></p>
+                    </div>
+                </div>
+
+                <div class="why_with_us__cards__item">
+                    <div class="why_with_us__cards__item__text">
+                        <p>We can make a reservation in advance to
+                            <b>RIDE HORSES</b> or <b>LUNCH</b>
+                            making this an unique experience</p>
+                    </div>
+                </div>
+
+                <div class="why_with_us__cards__item">
+                    <div class="why_with_us__cards__item__text">
+                        <p> <b>BABIES</b> ...,
+                            <b>WHEELCHAIRS</b> ...,
+                            at no additional cost
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </main>
+        </section>
 
-    <section id="why_with_us" class="why_with_us section">
+        <section id="activities" class="activities section">
 
-        <div class="section__description">
             <div class="title title--center">
-                <h2>Why with us?</h2>
-            </div>
-            <div class="section__description__text">
-                <p>Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit.
-                </p>
+                <h2>Our tour includes</h2>
             </div>
 
-        </div>
+            <div class="activities__item">
+                <div class="activities__item__image">
+                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
+                </div>
+                <div class="activities__item__text">
+                    <p>
+                        Pick up at airport, cruise, hotel or rental house in Havana
+                        and return at the end of the tour.
+                    </p>
 
+                    <p>Tours through the tobacco fields, where you can
+                        acquire some knowledge about traditional Cuban
+                        cigars, learn about its growth and elaboration.
+                        <b>If you want, you can smoke the cigars and carry
+                        them with you: your friends will be thrilled!</b>
+                    </p>
 
-
-        <div class="why_with_us__cards">
-
-            <div class="why_with_us__cards__item">
-                <div class="why_with_us__cards__item__text">
-                    <p>In the <b>TOP FIVE</b> for more than a
-                        <b>YEAR</b> in <b><a href="https://www.tripadvisor.com/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html" target="_blank
-">TRIPADVISOR</a></b></p>
+                    <p>
+                        Horseback ride through the Viñales National
+                        Park for the <b>additional price of 10.00 cuc per
+                        person the excursion of approximately 1 hour</b>,
+                        where you can taste the exquisite Cuban coffee
+                        and the Guayabita del Pinar rum.
+                    </p>
                 </div>
             </div>
 
-            <div class="why_with_us__cards__item">
-                <div class="why_with_us__cards__item__text">
-                    <p>We offer  <b>TIMELINESS</b> with a
-                        <b>COMPETITIVE PRICE</b>
-                        and <b>CONFORT</b></p>
+            <div class="activities__item activities__item--inverse">
+                <div class="activities__item__image">
+                    <img src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') }}" alt="">
+                </div>
+                <div class="activities__item__text">
+
+                    <p>
+                        Visit the Indian Cave, a natural
+                        refuge of the first habitants of
+                        our lands and you’ll take a ride
+                        in a boat through subterranean waters.
+                        <b>For the additional price of 5.00 cuc per person.</b>
+                    </p>
+
+                    <p>
+                        Visit the Mural of Prehistory, one of biggest
+                        murals outdoors of the world.</p>
+
+                    <p>
+                        Visit the gazebo of Los Jazmines with a wide
+                        and beautiful view of the whole place.</p>
+
+                    <p>
+                        This whole tour will be combined with delicious
+                        food offers in restaurants. <b>For the additional
+                        price of 15.00 cuc per person the main course you want</b>.
+                    </p>
+
                 </div>
             </div>
 
-            <div class="why_with_us__cards__item">
-                <div class="why_with_us__cards__item__text">
-                    <p>We can make a reservation in advance for
-                        <b>HORSE RIDING</b> or <b>DIVING</b>
-                        and also <b>LUNCH</b>
-                        making a unique experience</p>
+            <div class="activities__item">
+                <div class="activities__item__image">
+                    <img src="{{ asset('img/gallery/3.jpg') }}" alt="">
+                </div>
+                <div class="activities__item__text">
+                    <p>
+                        We recommend you bring light clothes, sunglasses,
+                        a hat or cap, camera if you want to
+                        take beautiful photos, plus a bottle of water.
+                        Also a extra bit of cash for buying ciggar if you want ;)
+                    </p>
+
+                    <p>
+                        We recommend <b>doing this tour starting at 7:30 am </b>
+                        for the distance needed to travel.
+                        The return to Havana will take place in the afternoon,
+                        at the end of the tour.
+                    </p>
+
+                    <p>
+                        We provide a private service only for you and your family
+                    </p>
+
                 </div>
             </div>
 
-            <div class="why_with_us__cards__item">
-                <div class="why_with_us__cards__item__text">
-                    <p> <b>BABIES</b>...  <b>WHEAL-CHAIR</b>...
-                        with not additional cost</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="activities" class="activities section">
-
-        <div class="title title--center">
-            <h2>What you can do?</h2>
-        </div>
-
-        <div class="activities__item">
-            <div class="activities__item__image">
-                <img src="{{ asset('img/1.jpg') }}" alt="">
-            </div>
-            <div class="activities__item__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at consequuntur eos ex facere fugit iste iusto minus molestias necessitatibus nemo porro qui quibusdam saepe, sint sit ut vel velit?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores at dicta, dignissimos distinctio, incidunt, inventore iure laudantium provident quae quibusdam recusandae suscipit ut? At eius exercitationem quisquam quo rerum?</p>
-            </div>
-        </div>
-
-        <div class="activities__item activities__item--inverse">
-            <div class="activities__item__image">
-                <img src="{{ asset('img/2.jpg') }}" alt="">
-            </div>
-            <div class="activities__item__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur eligendi harum maxime nihil nostrum pariatur quia, quidem ratione rem voluptatibus? Deleniti dolorum excepturi, ipsam nesciunt nulla obcaecati repellendus voluptatem voluptatibus?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores at dicta, dignissimos distinctio, incidunt, inventore iure laudantium provident quae quibusdam recusandae suscipit ut? At eius exercitationem quisquam quo rerum?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at consequuntur eos ex facere fugit iste iusto minus molestias necessitatibus nemo porro qui quibusdam saepe, sint sit ut vel velit?</p>
-            </div>
-        </div>
-
-        <div class="activities__item">
-            <div class="activities__item__image">
-                <img src="{{ asset('img/3.jpg') }}" alt="">
-            </div>
-            <div class="activities__item__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at consequuntur eos ex facere fugit iste iusto minus molestias necessitatibus nemo porro qui quibusdam saepe, sint sit ut vel velit?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores at dicta, dignissimos distinctio, incidunt, inventore iure laudantium provident quae quibusdam recusandae suscipit ut? At eius exercitationem quisquam quo rerum?</p>
-            </div>
-        </div>
-
-        <div class="activities__button">
-            <a class="btn btn--primary-gradient" href="{{ path('booking') }}">
-                Reservar
-            </a>
-        </div>
-    </section>
-
-    <section id="more_places" class="more_places parallax  section section--no-margin">
-
-        <div class="more_places__content">
-            <div class="more_places__content__title">
-                <h2 class="title title--white title--big title--center">
-                    Did you need more?
-                </h2>
-            </div>
-            <div class="more_places__content__places">
-                <ul>
-                    <li><a href="https://www.taxidriverscuba.com/en/airport/1/transfer-from-the-airports-of-cuba-to-your-destination">Airport</a></li>
-                    <li><a href="https://www.taxidriverscuba.com/en/experience/7/attractive-day-excursion-from-havana-to-varadero">Varadero</a></li>
-                    <li><a href="https://www.taxidriverscuba.com/en/booking/5/habana-to-cayo-santa-maria">Cayo Santa Maria</a></li>
-                    <li><a href="https://www.taxidriverscuba.com/en/booking/11/habana-to-cienfuegos">Cienfuegos</a></li>
-                    <li><a href="https://www.taxidriverscuba.com/en/booking/13/trinidad">Trinidad</a></li>
-                </ul>
-            </div>
-            <div class="more_places__content__button">
-                <a class="btn btn--secundary-gradient" href="https://www.taxidriverscuba.com/">
-                    See other destinations
+            <div class="activities__button">
+                <a class="btn btn--primary-gradient" href="{{ path('booking') }}">
+                    Make a reservation
                 </a>
             </div>
-        </div>
+        </section>
 
-    </section>
+        <section id="more_places" class="more_places parallax  section section--no-margin">
 
-    <section id="contact" class="contact_faq">
-
-        <div class="title title--center">
-            <h2>Contact & FAQ</h2>
-        </div>
-
-        <div class="contact_faq__content">
-
-            <div class="contact_faq__content__faq">
-                <h4>Frequently Askly questions</h4>
-                <ul>
-                    <li>
-                        Can i pay with a transaction?
-                        <p>yes</p>
-                    </li>
-                    <li>
-                        The Tour to Vinales from Havana includes the return.
-                        <p>Yes we can leave you at the same place we pick you up or the place you want in Havana</p>
-                    </li>
-                    <li>Do you pick me up from Cruise or Airport
-                        <p>
-                            Yes, you only need to check this option in the <a href="{{ path('booking') }}">RESERVATION FORM</a>.
-                        </p>
-                    </li>
-                </ul>
+            <div class="more_places__content">
+                <div class="more_places__content__title">
+                    <h2 class="title title--white title--big title--center">
+                        Did you need more?
+                    </h2>
+                </div>
+                <div class="more_places__content__places">
+                    <ul>
+                        <li><a href="https://www.taxidriverscuba.com/en/airport/1/transfer-from-the-airports-of-cuba-to-your-destination">Airport</a></li>
+                        <li><a href="https://www.taxidriverscuba.com/en/experience/7/attractive-day-excursion-from-havana-to-varadero">Varadero</a></li>
+                        <li><a href="https://www.taxidriverscuba.com/en/booking/5/habana-to-cayo-santa-maria">Cayo Santa Maria</a></li>
+                        <li><a href="https://www.taxidriverscuba.com/en/booking/6/habana-to-cayo-coco">Cayo Coco</a></li>
+                        <li><a href="https://www.taxidriverscuba.com/en/booking/11/habana-to-cienfuegos">Cienfuegos</a></li>
+                        <li><a href="https://www.taxidriverscuba.com/en/booking/12/habana-to-trinidad">Trinidad</a></li>
+                        <li><a href="https://www.taxidriverscuba.com/en/booking/7/habana-to-vinales">Vinales (transfer only)</a></li>
+                    </ul>
+                </div>
+                <div class="more_places__content__button">
+                    <a class="btn btn--primary-gradient"
+                       href="https://www.taxidriverscuba.com">
+                        See other destinations
+                    </a>
+                </div>
             </div>
 
-            <div class="contact_faq__content__contact">
-                <h4>Send us a message</h4>
+        </section>
 
-                <form action="" class="form">
-                    <div class="form__item">
-                        <label for="name">Your name</label>
-                        <input id="name" type="text" placeholder="your name" required>
-                    </div>
-                    <div class="form__item">
-                        <label for="email">Your email</label>
-                        <input id="email" type="email" placeholder="your email" required>
-                    </div>
-                    <div class="form__item">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" cols="30" rows="4" required></textarea>
-                    </div>
-                    <input class="btn btn--secundary-gradient" type="submit" value="Send message">
-                </form>
+        <section id="contact" class="contact_faq">
+
+            <div class="title title--center">
+                <h2>Contact & FAQ</h2>
             </div>
 
-        </div>
+            <div class="contact_faq__content">
 
-    </section>
+                <div class="contact_faq__content__faq">
+                    <h4>Frequently askly questions</h4>
+                    <ul>
+                        <li>
+                            Can I pay by making a transfer?
+                            <p>yes, you can. You only need to make a
+                                transfer to this account number, #123456789</p>
+                        </li>
+                        <li>
+                            Can I pay in cash and in what currency can I pay?
+                            <p>Yes, you can pay in cash to driver at the beginning of the travel, we
+                            accept payments in EUR, USD and CUC.</p>
+                        </li>
+                        <li>
+                            The tour to Vinales includes the return?
+                            <p>Yes, we can leave where we pickup you or in any place you want in Havana</p>
+                        </li>
+                        <li>
+                            Do you offer a pickup from Cruise or Airport?
+                            <p>
+                                Yes, you only need to check this option in the <a href="">RESERVATION FORM</a>.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact_faq__content__contact">
+                    <h4>Send us a message</h4>
+
+                    <form action="" class="form">
+                        <div class="form__item">
+                            <label for="name">Your name</label>
+                            <input id="name" type="text" placeholder="your name" required>
+                        </div>
+                        <div class="form__item">
+                            <label for="email">Your email</label>
+                            <input id="email" type="email" placeholder="your email" required>
+                        </div>
+                        <div class="form__item">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" cols="30" rows="4" required placeholder="Your message"></textarea>
+                        </div>
+                        <input class="btn btn--primary-gradient" type="submit" value="Send message">
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
+
+        <script type="text/javascript">
+            function downloadJSAtOnload() {
+                let element = document.createElement("script");
+                element.src = "/static/scripts/Index.js";
+                document.body.appendChild(element);
+            }
+
+            if (window.addEventListener)
+                window.addEventListener("load", downloadJSAtOnload, false);
+            else if (window.attachEvent)
+                window.attachEvent("onload", downloadJSAtOnload);
+            else window.onload = downloadJSAtOnload;
+        </script>
 
 {% endblock %}

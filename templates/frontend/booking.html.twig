@@ -55,7 +55,8 @@
                     </div>
 
                     <div class="form__item">
-                        <span><b>PRICE:</b> 250 USD</span>
+                        <span id="priceText" class="price_text price_text--is-visible"><b>Price:</b> <span id="priceNumber">250</span> USD</span>
+                        <span id="priceTextNegotiation" class="price_text_negotiation"><b>We will send you a offer!</b></span>
                     </div>
                 </div>
 
@@ -94,10 +95,23 @@
 
             {{ form_row(form.bookingLang, {value: app.request.locale}) }}
             {{ form_row(form.campaign, {value: 'vinales-web-form'}) }}
-            <input class="btn btn--secundary-gradient" type="submit" value="{% trans %}Book.send{% endtrans %}">
+            <input class="btn btn--primary-gradient" type="submit" value="{% trans %}Book.send{% endtrans %}">
         {{ form_end(form) }}
     </div>
 </section>
 
+ <script type="text/javascript">
+            function downloadJSAtOnload() {
+                let element = document.createElement("script");
+                element.src = "/static/scripts/Form.js";
+                document.body.appendChild(element);
+
+            }
+            if (window.addEventListener)
+                window.addEventListener("load", downloadJSAtOnload, false);
+            else if (window.attachEvent)
+                window.attachEvent("onload", downloadJSAtOnload);
+            else window.onload = downloadJSAtOnload;
+        </script>
 
 {% endblock body %}
