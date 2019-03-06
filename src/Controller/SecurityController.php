@@ -12,5 +12,5 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class SecurityController extends AbstractController
 {
 
-    
+
 }

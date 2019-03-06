@@ -56,6 +56,7 @@ class BookingController extends AbstractController
                 ->setFrom('booking@taxidriverscuba.com')
                 ->setTo('taxidriverscuba@gmail.com')
                 ->setCc('josmiguel92@gmail.com')
+                ->setCc('14ndy15@gmail.com')
                 ->setBody(
                     $this->renderView(
                     // templates/emails/registration.html.twig

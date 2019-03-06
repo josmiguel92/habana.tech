@@ -7,6 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BookingRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Booking
 {
@@ -125,6 +126,9 @@ class Booking
     {
         $this->bookingTime = new \DateTime();
         $this->orderNumber = "vin-".date("md")."-".substr(uniqid(),8,4);
+        $this->setUserConfirmed(false);
+        $this->setTaxiConfirmed(false);
+        $this->setIsDone(false);
 
     }
 
@@ -336,6 +340,21 @@ class Booking
     }
 
 
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function calculatePrice()
+    {
+        if ($this->peopleCount > 1 and $this->peopleCount < 4)
+            $this->setPrice(153);
+        if ($this->peopleCount == 4)
+            $this->setPrice(165);
+        if ($this->peopleCount == 5)
+            $this->setPrice(177);
+        else $this->setPrice(0);
+
+    }
 
 
 }

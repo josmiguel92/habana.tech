@@ -36,8 +36,6 @@
             <tr>
                 <td>{{ booking.id }}/{{ booking.orderNumber }}</td>
                 <td>{{ booking.bookingTime ? booking.bookingTime|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ booking.airportPickup ? 'Yes' : 'No' }}</td>
-                <td>{{ booking.flyNumber }}</td>
                 <td>{{ booking.campaign }}</td>
                 <td>{{ booking.clientName }}</td>
                 <td>{{ booking.clientEmail }}</td>
@@ -45,10 +43,6 @@
                 <td>{{ booking.pickupDate ? booking.pickupDate|date('Y-m-d') : '' }}</td>
                 <td>{{ booking.pickupTime ? booking.pickupTime|date('H:i:s') : '' }}</td>
                 <td>{{ booking.bookingLang }}</td>
-                <td>{{ booking.returnTravel ? 'Yes' : 'No' }}</td>
-                <td>{{ booking.returnPickupPlace }}</td>
-                <td>{{ booking.returnPickupDate ? booking.returnPickupDate|date('Y-m-d') : '' }}</td>
-                <td>{{ booking.returnPickupTime ? booking.returnPickupTime|date('H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('booking_show', {'id': booking.id}) }}">show</a>
                     <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
