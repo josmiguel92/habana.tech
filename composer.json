@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "friendsofsymfony/ckeditor-bundle": "^2.0",
+        "friendsofsymfony/user-bundle": "~2.0",
         "google/recaptcha": "^1.2",
         "guzzlehttp/guzzle": "^6.3",
         "liip/imagine-bundle": "^2.1",
