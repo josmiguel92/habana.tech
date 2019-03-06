@@ -617,7 +617,7 @@ input[type="submit"] {
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  background-image: url("/img/parallax.png"); }
+  background-image: url("static/img/parallax.png"); }
   .parallax:before {
     content: '';
     position: absolute;
