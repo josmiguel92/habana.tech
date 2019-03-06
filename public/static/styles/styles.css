@@ -573,10 +573,11 @@ input[type="submit"] {
           width: 50%; } }
       .activities__item__text p {
         margin: auto 10%; }
-    .activities__item--inverse .activities__item__image {
-      order: 2; }
-    .activities__item--inverse .activities__item__text {
-      order: 1; }
+    @media (min-width: 1200px) {
+      .activities__item--inverse .activities__item__image {
+        order: 2; }
+      .activities__item--inverse .activities__item__text {
+        order: 1; } }
     .activities__item:first-child {
       margin-top: 2em; }
   .activities__button {
