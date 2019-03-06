@@ -35,6 +35,7 @@ class BookingType extends AbstractType
 
             ->add('clientName')
             ->add('clientEmail')
+            ->add('telephone')
             ->add('clientMessage', TextareaType::class)
 
             ->add('bookingLang', HiddenType::class)
