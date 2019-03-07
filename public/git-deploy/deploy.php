@@ -17,6 +17,7 @@
 		'git submodule sync',
 		'git submodule update',
 		'git submodule status',
+		'rm -r $PWD/../../var/cache/prod/',
 	);
 	// Run the commands for output
 	$output = '';
