@@ -4,42 +4,50 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>OrderNumber</th>
+                <th>Número de reserva</th>
                 <td>{{ booking.orderNumber }}</td>
             </tr>
             <tr>
-                <th>BookingTime</th>
-                <td>{{ booking.bookingTime ? booking.bookingTime|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-
-            <tr>
-                <th>Campaign</th>
-                <td>{{ booking.campaign }}</td>
-            </tr>
-            <tr>
-                <th>ClientName</th>
+                <th>Nombre del cliente</th>
                 <td>{{ booking.clientName }}</td>
             </tr>
             <tr>
-                <th>ClientEmail</th>
+                <th>Email del cliente</th>
                 <td>{{ booking.clientEmail }}</td>
             </tr>
             <tr>
-                <th>PickupPlace</th>
+                <th>Lugar</th>
                 <td>{{ booking.pickupPlace }}</td>
             </tr>
 
             <tr>
-                <th>PickupDetails</th>
+                <th>Detalles</th>
                 <td>{{ booking.pickupDetails }}</td>
             </tr>
             <tr>
-                <th>PickupTime</th>
-                <td>{{ booking.pickupTime ? booking.pickupTime|date('Y-m-d H:i:s') : '' }}</td>
+                <th>Fecha</th>
+                <td>{{ booking.pickupTime ? booking.pickupDate|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>BookingLang</th>
+                <th>Hora</th>
+                <td>{{ booking.pickupTime ? booking.pickupTime|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Mensaje del cliente</th>
+                <td>{{ booking.clientMessage }}</td>
+            </tr>
+            <tr>
+                <th>Idioma</th>
                 <td>{{ booking.bookingLang }}</td>
+            </tr>
+            <tr>
+                <th>Fecha/Hora en que reserva</th>
+                <td>{{ booking.bookingTime ? booking.bookingTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+
+            <tr>
+                <th>Campaña</th>
+                <td>{{ booking.campaign }}</td>
             </tr>
 
         </tbody>
