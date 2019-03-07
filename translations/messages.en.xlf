@@ -9,7 +9,22 @@
         <source>Form</source>
         <target>The Form</target>
       </trans-unit>
-
+      <trans-unit id="jsa1A4y" resname="Your booking have been saved">
+        <source>Your booking have been saved</source>
+        <target>Your booking have been saved!</target>
+      </trans-unit>
+      <trans-unit id="yYutWwI" resname="Address or Fly/Cruise number">
+        <source>Address or Fly/Cruise number</source>
+        <target>Address or Fly/Cruise number</target>
+      </trans-unit>
+      <trans-unit id="JDifA2E" resname="Book.send">
+        <source>Book.send</source>
+        <target>Send request</target>
+      </trans-unit>
+      <trans-unit id="lzN.3Fx" resname="Index.title">
+        <source>Index.title</source>
+        <target>Travel to Vinales</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

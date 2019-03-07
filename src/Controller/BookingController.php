@@ -55,8 +55,7 @@ class BookingController extends AbstractController
             $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getOrderNumber()))
                 ->setFrom('booking@taxidriverscuba.com')
                 ->setTo('taxidriverscuba@gmail.com')
-                ->setCc('josmiguel92@gmail.com')
-                ->setCc('14ndy15@gmail.com')
+                ->setCc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
                 ->setBody(
                     $this->renderView(
                     // templates/emails/registration.html.twig

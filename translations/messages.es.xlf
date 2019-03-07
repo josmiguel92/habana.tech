@@ -9,10 +9,26 @@
         <source>Form</source>
         <target>El Formulario</target>
       </trans-unit>
-      <trans-unit id="Lg6WCrh" resname="People count">
-              <source>People count</source>
-              <target>Cantidad de personas</target>
-            </trans-unit>
+      <trans-unit id="yFhOWqt" resname="People count">
+        <source>People count</source>
+        <target>Cantidad de personas</target>
+      </trans-unit>
+      <trans-unit id="jsa1A4y" resname="Your booking have been saved">
+        <source>Your booking have been saved</source>
+        <target>Su reserva fue registrada</target>
+      </trans-unit>
+      <trans-unit id="yYutWwI" resname="Address or Fly/Cruise number">
+        <source>Address or Fly/Cruise number</source>
+        <target>Dirección/Número del vuelo o crucero</target>
+      </trans-unit>
+      <trans-unit id="JDifA2E" resname="Book.send">
+        <source>Book.send</source>
+        <target>Enviar datos</target>
+      </trans-unit>
+      <trans-unit id="lzN.3Fx" resname="Index.title">
+        <source>Index.title</source>
+        <target>Viaje a Viñales</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
