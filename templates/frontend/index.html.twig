@@ -1,4 +1,7 @@
 {% extends 'frontend/base.html.twig' %}
+{% block javascripts_defer %}
+    <script src="{{ asset('scripts/Index.js') }}" defer></script>
+{% endblock %}
 
 {% block title %}{% trans %}Index.title{% endtrans %}{% endblock %}
 
@@ -102,8 +105,9 @@
             </div>
 
             <div class="activities__item">
-                <div class="activities__item__image">
+                <div class="activities__item__image group1">
                     <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
+                    <img src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') }}" alt="">
                 </div>
                 <div class="activities__item__text">
                     <p>
@@ -128,9 +132,10 @@
                 </div>
             </div>
 
-            <div class="activities__item activities__item--inverse">
+            <div class="activities__item activities__item--inverse group2">
                 <div class="activities__item__image">
                     <img src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') }}" alt="">
+                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
                 </div>
                 <div class="activities__item__text">
 
@@ -160,8 +165,9 @@
             </div>
 
             <div class="activities__item">
-                <div class="activities__item__image">
+                <div class="activities__item__image group3">
                     <img src="{{ asset('img/gallery/3.jpg') }}" alt="">
+                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
                 </div>
                 <div class="activities__item__text">
                     <p>
@@ -202,17 +208,17 @@
                 </div>
                 <div class="more_places__content__places">
                     <ul>
-                        <li><a href="https://www.taxidriverscuba.com/en/airport/1/transfer-from-the-airports-of-cuba-to-your-destination">Airport</a></li>
-                        <li><a href="https://www.taxidriverscuba.com/en/experience/7/attractive-day-excursion-from-havana-to-varadero">Varadero</a></li>
-                        <li><a href="https://www.taxidriverscuba.com/en/booking/5/habana-to-cayo-santa-maria">Cayo Santa Maria</a></li>
-                        <li><a href="https://www.taxidriverscuba.com/en/booking/6/habana-to-cayo-coco">Cayo Coco</a></li>
-                        <li><a href="https://www.taxidriverscuba.com/en/booking/11/habana-to-cienfuegos">Cienfuegos</a></li>
-                        <li><a href="https://www.taxidriverscuba.com/en/booking/12/habana-to-trinidad">Trinidad</a></li>
-                        <li><a href="https://www.taxidriverscuba.com/en/booking/7/habana-to-vinales">Vinales (transfer only)</a></li>
+                        <li><a target="_blank"  href="https://www.taxidriverscuba.com/en/airport/1/transfer-from-the-airports-of-cuba-to-your-destination">Airport</a></li>
+                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/experience/7/attractive-day-excursion-from-havana-to-varadero">Varadero</a></li>
+                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/5/habana-to-cayo-santa-maria">Cayo Santa Maria</a></li>
+                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/6/habana-to-cayo-coco">Cayo Coco</a></li>
+                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/11/habana-to-cienfuegos">Cienfuegos</a></li>
+                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/12/habana-to-trinidad">Trinidad</a></li>
+                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/7/habana-to-vinales">Vinales (transfer only)</a></li>
                     </ul>
                 </div>
                 <div class="more_places__content__button">
-                    <a class="btn btn--primary-gradient"
+                    <a target="_blank" class="btn btn--primary-gradient"
                        href="https://www.taxidriverscuba.com">
                         See other destinations
                     </a>
@@ -279,18 +285,5 @@
 
         </section>
 
-        <script type="text/javascript">
-            function downloadJSAtOnload() {
-                let element = document.createElement("script");
-                element.src = "/static/scripts/Index.js";
-                document.body.appendChild(element);
-            }
-
-            if (window.addEventListener)
-                window.addEventListener("load", downloadJSAtOnload, false);
-            else if (window.attachEvent)
-                window.attachEvent("onload", downloadJSAtOnload);
-            else window.onload = downloadJSAtOnload;
-        </script>
 
 {% endblock %}
