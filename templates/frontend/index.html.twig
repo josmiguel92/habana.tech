@@ -8,7 +8,10 @@
 
             <div class="main__image">
                 <picture>
-                    <source media="(min-width: 800px)" srcset="{{ asset('img/main.jpg') }}">
+                    <source media="(min-width: 1200px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_1200') }}">
+                    <source media="(min-width: 1000px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_1000') }}">
+                    <source media="(min-width: 800px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_800') }}">
+                    <source media="(min-width: 600px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_600') }}">
                     <!-- img tag for browsers that do not support picture element -->
                     <img src="{{ asset('img/main_portraid.jpg') }}" alt="">
                 </picture>
