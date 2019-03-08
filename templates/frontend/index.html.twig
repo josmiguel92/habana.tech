@@ -1,4 +1,7 @@
 {% extends 'frontend/base.html.twig' %}
+{% block javascripts_defer %}
+    <script src="{{ asset('scripts/Index.js') }}" defer></script>
+{% endblock %}
 
 {% block title %}{% trans %}Index.title{% endtrans %}{% endblock %}
 

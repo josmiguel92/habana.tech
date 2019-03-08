@@ -1,5 +1,9 @@
 {% extends('frontend/base.html.twig') %}
 
+{% block javascripts_defer %}
+    <script src="{{ asset('scripts/Form.js') }}" defer></script>
+{% endblock %}
+
 {% block body %}
 <section class="section reservation">
     <div class="title title--center">
@@ -99,19 +103,5 @@
         {{ form_end(form) }}
     </div>
 </section>
-
- <script type="text/javascript">
-            function downloadJSAtOnload() {
-                let element = document.createElement("script");
-                element.src = "/static/scripts/Form.js";
-                document.body.appendChild(element);
-
-            }
-            if (window.addEventListener)
-                window.addEventListener("load", downloadJSAtOnload, false);
-            else if (window.attachEvent)
-                window.attachEvent("onload", downloadJSAtOnload);
-            else window.onload = downloadJSAtOnload;
-        </script>
 
 {% endblock body %}
