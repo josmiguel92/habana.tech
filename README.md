@@ -1,4 +1,4 @@
 # vinales-taxi
 Vinales website
 
-a prject from Habana.Tech
+a project from Habana.Tech
