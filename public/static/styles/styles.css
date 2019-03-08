@@ -557,10 +557,19 @@ input[type="submit"] {
     flex-wrap: wrap;
     width: 100%; }
     .activities__item__image {
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      overflow: hidden; }
       @media (min-width: 1200px) {
         .activities__item__image {
-          width: 50%; } }
+          width: 50%;
+          min-height: 70vh;
+          height: 70vh; } }
+      .activities__item__image img {
+        position: absolute;
+        transition: opacity .5s ease-in; }
+      .activities__item__image img + img {
+        opacity: 0; }
     .activities__item__text {
       width: 100%;
       display: flex;
