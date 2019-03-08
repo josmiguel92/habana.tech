@@ -1,0 +1,78 @@
+.main{
+    overflow: hidden;
+    position: relative;
+
+    @mixin atLarge{
+        height: 90vh;
+    }
+
+    &__image{
+
+    }
+
+    &__content{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+
+        &__text{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+
+            @mixin atMedium {
+                margin-left: 4em;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            &__title{
+                @mixin atMedium {
+                    width: 100%;
+                }
+            }
+
+            & span{
+                color: white;
+                margin: .5em .75em;
+                position: relative;
+
+                &::after{
+                    content: '';
+                    position: absolute;
+                    height: .5em;
+                    width: .5em;
+                    margin: .05em .5em;
+                    border-radius: 50%;
+                    background-color: $mainGreen;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                }
+
+                &:last-child::after{
+                    display: none;
+                }
+
+            }
+        }
+
+        &__button{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+            height: 90%;
+        }
+    }
+
+}

@@ -1,0 +1,44 @@
+.contact_faq{
+    margin: 5%;
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__contact {
+            width: 100%;
+
+            @mixin atMedium{
+                width: 45%;
+                order: 1;
+            }
+
+            & .form{
+                width: 90%;
+                margin: auto;
+            }
+        }
+
+        &__faq {
+            width: 100%;
+
+            @mixin atMedium{
+                width: 45%;
+                order: 2;
+            }
+
+
+            & ul {
+                & li {
+                    margin: .5em;
+
+                    & a{
+                        color: $mainSoftDark;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

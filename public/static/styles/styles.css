@@ -559,7 +559,9 @@ input[type="submit"] {
     .activities__item__image {
       width: 100%;
       position: relative;
-      overflow: hidden; }
+      overflow: hidden;
+      min-height: 50vh;
+      height: 50vh; }
       @media (min-width: 1200px) {
         .activities__item__image {
           width: 50%;
@@ -567,7 +569,7 @@ input[type="submit"] {
           height: 70vh; } }
       .activities__item__image img {
         position: absolute;
-        transition: opacity .5s ease-in; }
+        transition: opacity 1s ease-in; }
       .activities__item__image img + img {
         opacity: 0; }
     .activities__item__text {

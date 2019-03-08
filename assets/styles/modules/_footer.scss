@@ -1,0 +1,31 @@
+.footer{
+    position: relative;
+
+    &__image{
+        &:before{
+            content: '';
+            position: absolute;
+            width: 110%;
+            height: 3em;
+            background: linear-gradient(#fff, #f7f7f7);
+            z-index: 1;
+            left: -5%;
+            filter: blur(4px);
+
+            @mixin atLarge{
+                height: 5em;
+            }
+
+        }
+
+        & img {
+            top: 3em;
+            position: relative;
+        }
+    }
+
+    &__contact{
+        position: absolute;
+        width: 100%;
+    }
+}

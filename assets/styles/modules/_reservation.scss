@@ -1,0 +1,97 @@
+.reservation{
+    margin-top: 10% !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & .title{
+        width: 100%;
+    }
+
+    &__content{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: 1px rgba($mainSoftDark, .1) solid;;
+
+        @mixin atLarge{
+            width: 80%;
+        }
+
+        &__form{
+            padding: .5em;
+            width: 100%;
+
+            @mixin atLarge {
+                padding: 2em;
+                width: 75%;
+            }
+
+            &__division{
+                display: flex;
+                justify-content: center;
+                height: 2px;
+                border-bottom: 1px rgba($mainSoftDark, .1) solid;
+                width: 80%;
+                margin: 2em auto;
+            }
+
+            &__group{
+
+                &__single {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+
+                    &.place, &.time, &.details, &.passenger_price {
+                        display: flex;
+                        justify-content: flex-start;
+
+                        & > div {
+                            margin-right: 2em;
+
+                            &:last-child{
+                                margin-right: auto;
+                            }
+                        }
+                    }
+
+                    &.contact{
+                        justify-content: space-between;
+                        & > div {
+                            width: 45%;
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+    }
+}
+
+.price_text{
+    position: absolute;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+
+    &_negotiation{
+        position: absolute;
+        opacity: 0;
+        transform: scale(1.1);
+        transition: all .3s ease-in-out;
+
+        &--is-visible{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    &--is-visible{
+        opacity: 1;
+    }
+}

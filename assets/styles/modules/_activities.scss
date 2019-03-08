@@ -1,0 +1,74 @@
+.activities{
+    margin: 5% 0;
+
+    &__item{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        &__image{
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            min-height: 50vh;
+            height: 50vh;
+
+            @mixin atLarge {
+                width: 50%;
+                min-height: 70vh;
+                height: 70vh;
+            }
+
+            img {
+                position: absolute;
+                transition: opacity 1s ease-in;
+            }
+
+            img + img { opacity: 0; }
+
+        }
+
+        &__text{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 5% auto;
+
+            @mixin atLarge{
+                width: 50%;
+            }
+
+            & p{
+                margin: auto 10%;
+            }
+        }
+
+        &--inverse{
+
+            @mixin atLarge {
+                .activities__item__image {
+                    order: 2;
+                }
+                .activities__item__text {
+                    order: 1;
+                }
+            }
+        }
+
+        &:first-child{
+            margin-top: 2em;
+        }
+
+    }
+
+    &__button{
+        margin: 3em;
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+}

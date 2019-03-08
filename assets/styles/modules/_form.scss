@@ -1,0 +1,19 @@
+input[type="text"],
+input[type="email"],
+textarea
+{
+    padding: .5em;
+    margin: 1em 1em 1em 0;
+    border: 1px $mainSoftDark solid;
+    width: 90%;
+    font-size: 1.1em;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+}
+
+.form__item{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

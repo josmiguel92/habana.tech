@@ -1,0 +1,25 @@
+.section{
+    margin: 5%;
+
+    &__description{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & .title{
+            width: 100%;
+        }
+
+        &__text {
+            width: 50%;
+
+            & p {
+                text-align: center;
+            }
+        }
+
+    }
+    &--no-margin{
+        margin: 0;
+    }
+}
