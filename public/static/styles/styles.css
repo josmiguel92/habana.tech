@@ -622,6 +622,11 @@ input[type="submit"] {
   .price_text--is-visible {
     opacity: 1; }
 
+#booking_pickupPlace {
+  display: flex; }
+  #booking_pickupPlace > div {
+    margin: auto 1em; }
+
 .section {
   margin: 5%; }
   .section__description {

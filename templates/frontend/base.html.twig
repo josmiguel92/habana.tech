@@ -21,7 +21,6 @@
             </a>
         </div>
 
-
         <div class="menu-icon">
             <div class="menu-icon__middle"></div>
         </div>
@@ -45,7 +44,7 @@
             <picture>
                 <source class="lazyloaded" media="(min-width: 800px)"
                         srcset="{{ asset('img/footer.jpg') | imagine_filter('min_width_800') }} 800w,
-                                    {{ asset('img/footer.jpg') | imagine_filter('min_width_1000') }} 1000w">
+                                {{ asset('img/footer.jpg') | imagine_filter('min_width_1000') }} 1000w">
                 <!-- img tag for browsers that do not support picture element -->
                 <img class="lazyload" data-src="{{ asset('img/footer_portraid.jpg') }}" alt="">
             </picture>

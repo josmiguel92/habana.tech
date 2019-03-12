@@ -1,9 +1,7 @@
 import SmoothScrooll from './modules/_smoothScroll';
 import ImageFade from './modules/_imageFade';
-import MobileMenu from './modules/_menuMobile';
 
 new SmoothScrooll();
-new MobileMenu();
 let group1 = document.querySelectorAll(".group1 img");
 let group2 = document.querySelectorAll(".group2 img");
 let group3 = document.querySelectorAll(".group3 img");
