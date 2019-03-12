@@ -1,13 +1,15 @@
 {% extends 'frontend/base.html.twig' %}
+
 {% block javascripts_defer %}
-    <script src="{{ asset('scripts/Index.js') }}" defer></script>
+    <script src="{{ asset('scripts/index.js') }}" defer></script>
+    <script src="{{ asset('scripts/vendor.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}{% trans %}Index.title{% endtrans %}{% endblock %}
 
 {% block body %}
    
-           <main class="main">
+       <main class="main">
 
             <div class="main__image">
                 <picture>
@@ -75,7 +77,7 @@
                     <div class="why_with_us__cards__item__text">
                         <p>We offer <b>PUNCTUALITY</b> with a
                             <b>COMPETITIVE PRICE</b>
-                            and <b>COMFORT</b></p>
+                            and <b>COMFORT</b>.</p>
                     </div>
                 </div>
 
@@ -83,7 +85,7 @@
                     <div class="why_with_us__cards__item__text">
                         <p>We can make a reservation in advance to
                             <b>RIDE HORSES</b> or <b>LUNCH</b>
-                            making this an unique experience</p>
+                            making this an unique experience.</p>
                     </div>
                 </div>
 
@@ -91,7 +93,7 @@
                     <div class="why_with_us__cards__item__text">
                         <p> <b>BABIES</b> ...,
                             <b>WHEELCHAIRS</b> ...,
-                            at no additional cost
+                            at no additional cost.
                     </div>
                 </div>
 
@@ -106,8 +108,16 @@
 
             <div class="activities__item">
                 <div class="activities__item__image group1">
-                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
-                    <img src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') }}" alt="">
+                    <img class="blur-up lazyload"
+                         sizes="(max-width: 1200px) 100vw, 50vw"
+                         src="{{ asset('img/gallery/Tobaco-vinales-hands.jpg') | imagine_filter('small_thumbnail') }}"
+                         data-srcset="{{ asset('img/gallery/Tobaco-vinales-hands.jpg') | imagine_filter('min_width_600') }} 600w,
+                                {{ asset('img/gallery/Tobaco-vinales-hands.jpg') | imagine_filter('min_width_800') }} 800w,
+                                {{ asset('img/gallery/Tobaco-vinales-hands.jpg') | imagine_filter('min_width_1200') }} 1200w"
+                         alt="Tobaco in Vinales, you can buyed in our trip">
+                    {#<img class="blur-up lazyload"#}
+                         {#src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') }}"#}
+                         {#alt="">#}
                 </div>
                 <div class="activities__item__text">
                     <p>
@@ -134,8 +144,20 @@
 
             <div class="activities__item activities__item--inverse group2">
                 <div class="activities__item__image">
-                    <img src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') }}" alt="">
-                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
+                    <img class="blur-up lazyload"
+                         sizes="(max-width: 1200px) 100vw, 50vw"
+                         src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') | imagine_filter('small_thumbnail') }}"
+                         data-srcset="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') | imagine_filter('min_width_600') }} 600w,
+                                {{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') | imagine_filter('min_width_800') }} 800w,
+                                {{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') | imagine_filter('min_width_1200') }} 1200w"
+                         alt="Tobaco in Vinales, you can buyed in our trip">
+                    <img class="blur-up lazyload"
+                         sizes="(max-width: 1200px) 100vw, 50vw"
+                         src="{{ asset('img/gallery/panoramic-view-vinales.jpg') | imagine_filter('small_thumbnail') }}"
+                         data-srcset="{{ asset('img/gallery/panoramic-view-vinales.jpg') | imagine_filter('min_width_600') }} 600w,
+                                {{ asset('img/gallery/panoramic-view-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
+                                {{ asset('img/gallery/panoramic-view-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w"
+                         alt="Tobaco in Vinales, you can buyed in our trip">
                 </div>
                 <div class="activities__item__text">
 
@@ -166,8 +188,20 @@
 
             <div class="activities__item">
                 <div class="activities__item__image group3">
-                    <img src="{{ asset('img/gallery/3.jpg') }}" alt="">
-                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
+                    <img class="blur-up lazyload"
+                         sizes="(max-width: 1200px) 100vw, 50vw"
+                         src="{{ asset('img/gallery/Aereal-view-vinales.jpg') | imagine_filter('small_thumbnail') }}"
+                         data-srcset="{{ asset('img/gallery/Aereal-view-vinales.jpg') | imagine_filter('min_width_600') }} 600w,
+                                {{ asset('img/gallery/Aereal-view-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
+                                {{ asset('img/gallery/Aereal-view-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w"
+                         alt="Tobaco in Vinales, you can buyed in our trip">
+                    <img class="blur-up lazyload"
+                         sizes="(max-width: 1200px) 100vw, 50vw"
+                         src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations.jpg') | imagine_filter('small_thumbnail') }}"
+                         data-srcset="{{ asset('img/gallery/vinales-cuba-tobacco-plantations.jpg') | imagine_filter('min_width_600') }} 600w,
+                                {{ asset('img/gallery/vinales-cuba-tobacco-plantations.jpg') | imagine_filter('min_width_800') }} 800w,
+                                {{ asset('img/gallery/vinales-cuba-tobacco-plantations.jpg') | imagine_filter('min_width_1200') }} 1200w"
+                         alt="Tobaco in Vinales, you can buyed in our trip">
                 </div>
                 <div class="activities__item__text">
                     <p>
@@ -185,7 +219,7 @@
                     </p>
 
                     <p>
-                        We provide a private service only for you and your family
+                        We provide a private service only for you and your family.
                     </p>
 
                 </div>
@@ -217,7 +251,7 @@
                         <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/7/habana-to-vinales">Vinales (transfer only)</a></li>
                     </ul>
                 </div>
-                <div class="more_places__content__button">
+                <div class="more_places__content__button lazyload">
                     <a target="_blank" class="btn btn--primary-gradient"
                        href="https://www.taxidriverscuba.com">
                         See other destinations
@@ -255,7 +289,7 @@
                         <li>
                             Do you offer a pickup from Cruise or Airport?
                             <p>
-                                Yes, you only need to check this option in the <a href="">RESERVATION FORM</a>.
+                                Yes, you only need to check this option in the <a href="{{ path('booking') }}">RESERVATION FORM</a>.
                             </p>
                         </li>
                     </ul>
@@ -264,7 +298,8 @@
                 <div class="contact_faq__content__contact">
                     <h4>Send us a message</h4>
 
-                    <form action="" class="form">
+                    {#TODO: send this form#}
+                    <form action="contact.php" class="form">
                         <div class="form__item">
                             <label for="name">Your name</label>
                             <input id="name" type="text" placeholder="your name" required>
@@ -284,6 +319,5 @@
             </div>
 
         </section>
-
 
 {% endblock %}

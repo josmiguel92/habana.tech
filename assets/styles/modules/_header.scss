@@ -1,18 +1,18 @@
 .header {
-    opacity: 0;
-    z-index: -1;
+    z-index: 2;
     background-color: rgba($mainDark, .95);
-    position: fixed;
+    position: absolute;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     top: 0;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: .25em 0;
 
     @mixin atLarge{
-        opacity: 1;
-        z-index: 2;
+        justify-content: space-evenly;
+        position: fixed;
     }
 
     & .logo {
@@ -21,11 +21,20 @@
     }
 
     & .nav {
+        display: none;
+        width: 100%;
+
+        @mixin atLarge{
+            display: block;
+            width: auto;
+        }
 
         & ul {
             display: flex;
-            list-style: none;
+            flex-wrap: wrap;
             align-items: center;
+            justify-content: space-evenly;
+            list-style: none;
 
             & li {
 
@@ -47,7 +56,91 @@
              border: 1px $mainGreen solid !important;
         }
 
+        &--is-visible{
+            display: block;
+
+            & ul{
+                & li{
+                    margin: .75em auto;
+                }
+            }
+        }
 
     }
 
+    & .menu-icon{
+        width: 20px;
+        height: 19px;
+        position: relative;
+        background-color: rgba(#e34a4c, .1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto 1em;
+
+        @mixin atLarge {
+            display: none;
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color: white;
+            transform-origin: 0 0;
+            transition: transform .3s ease-out;
+        }
+
+        &__middle{
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color: white;
+            transition: all .3s ease-out;
+            transform-origin: 0 50%;
+
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            height: 3px;
+            background-color: white;
+            transform-origin: 0 100%;
+            transition: transform .3s ease-out;
+        }
+
+        &--close-x{
+            &::before{
+                transform: rotate(45deg) scaleX(1.25);
+            }
+
+            .menu-icon__middle{
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            &::after{
+                transform: rotate(-45deg) scale(1.25) translateY(1px);
+            }
+        }
+    }
+
+    &--is-visible{
+        flex-wrap: wrap;
+        z-index: 2;
+        background-color: rgba($mainDark, .9);
+        li a{
+            color: #fff;
+        }
+
+    }
 }

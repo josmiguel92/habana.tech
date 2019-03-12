@@ -3,7 +3,6 @@ class ImageFade {
         this.current = 0;
         this.time = time;
         this.slides = slides;
-        console.log(this.slides);
         this.event();
     }
 

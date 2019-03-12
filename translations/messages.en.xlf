@@ -19,7 +19,7 @@
       </trans-unit>
       <trans-unit id="JDifA2E" resname="Book.send">
         <source>Book.send</source>
-        <target>Send request</target>
+        <target>Send reservation</target>
       </trans-unit>
       <trans-unit id="lzN.3Fx" resname="Index.title">
         <source>Index.title</source>
