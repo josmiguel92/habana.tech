@@ -9,4 +9,3 @@ new ImageFade(group1);
 new ImageFade(group2, 4000);
 new ImageFade(group3, 3500);
 
-console.log('hie');

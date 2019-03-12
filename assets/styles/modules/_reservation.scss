@@ -95,3 +95,11 @@
         opacity: 1;
     }
 }
+
+#booking_pickupPlace{
+    display: flex;
+
+    & > div{
+        margin: auto 1em;
+    }
+}

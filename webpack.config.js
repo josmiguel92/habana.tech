@@ -2,8 +2,10 @@ var path = require('path');
 
 module.exports = {
     entry: {
-        Index: "./assets/scripts/Index.js",
-        Form: "./assets/scripts/Form.js",
+        app: "./assets/scripts/app.js",
+        index: "./assets/scripts/index.js",
+        vendor: "./assets/scripts/vendor.js",
+        form: "./assets/scripts/form.js",
     },
     output: {
         path: path.resolve(__dirname, "./public/static/scripts/"),

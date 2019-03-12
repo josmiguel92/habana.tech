@@ -12,20 +12,25 @@
     </head>
 
     <body>
+
     <header class="header">
 
         <div class="logo">
             <a href="/">
-                <img src="{{ asset('img/logo.png') }}" alt="Vinales in taxi">
+                <img src="{{ asset('img/logo.png') | imagine_filter('small_thumbnail') }}" alt="Vinales in taxi">
             </a>
+        </div>
+
+        <div class="menu-icon">
+            <div class="menu-icon__middle"></div>
         </div>
 
         <nav class="nav">
             <ul>
-                <li><a href="#why_with_us">Us</a></li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#more_places">More places</a></li>
-                <li><a href="#contact">Contact & FAQ</a></li>
+                <li><a href="{{ path('frontend') }}#why_with_us" data-section="#why_with_us">Us</a></li>
+                <li><a href="{{ path('frontend') }}#activities" data-section="#activities">Activities</a></li>
+                <li><a href="{{ path('frontend') }}#more_places" data-section="#more_places">More places</a></li>
+                <li><a href="{{ path('frontend') }}#contact" data-section="#contact">Contact & FAQ</a></li>
                 <li class="nav--special"><a href="{{ path('booking') }}">Make a Reservation</a></li>
             </ul>
         </nav>
@@ -37,14 +42,39 @@
     <footer class="footer">
         <div class="footer__image">
             <picture>
-                <source media="(min-width: 800px)" srcset="{{ asset('img/footer.jpg') }}">
+                <source class="lazyloaded" media="(min-width: 800px)"
+                        srcset="{{ asset('img/footer.jpg') | imagine_filter('min_width_800') }} 800w,
+                                {{ asset('img/footer.jpg') | imagine_filter('min_width_1000') }} 1000w">
                 <!-- img tag for browsers that do not support picture element -->
-                <img src="{{ asset('img/footer_portraid.jpg') }}" alt="">
+                <img class="lazyload" data-src="{{ asset('img/footer_portraid.jpg') }}" alt="">
             </picture>
         </div>
 
         <div class="footer__contact">
-
+            <address>
+                You can contact us at <a href="mailto:taxidriverscuba@gmail.com">taxidriverscuba@gmail.com</a>
+                or call us to phone <a href="tel://123-456-789">+53 5 123-456-798</a>
+            </address>
+            
+            <div class="social">
+                <ul>
+                    <li>
+                        <a href="">
+                            <img src="{{ asset('img/icons/tripadvisor.svg') }}" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="{{ asset('img/icons/facebook.svg') }}" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="{{ asset('img/icons/instagram.svg') }}" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </footer>

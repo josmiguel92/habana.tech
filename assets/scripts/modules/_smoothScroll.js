@@ -2,8 +2,7 @@ class SmoothScrooll{
     constructor(){
         this.offset = -10;
         this.call = null;
-        this.links = document.querySelectorAll(".nav a[href^='#']");
-        console.log(this.links);
+        this.links = document.querySelectorAll(".nav a[href*='#']");
         this.events();
     }
 
@@ -22,13 +21,12 @@ class SmoothScrooll{
             document.documentElement.scrollTop -= 10;
         }
 
-        console.log(document.documentElement.scrollTop);
     };
 
      reply_click(event) {
         event.preventDefault();
         this.call = setInterval(this.scroll.bind(this), 10);
-        let targetElement = event.target.getAttribute('href');
+        let targetElement = event.target.getAttribute('data-section');
         this.offset = document.querySelector(targetElement).offsetTop;
     }
 }
