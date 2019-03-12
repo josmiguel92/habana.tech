@@ -1,0 +1,28 @@
+Nueva reserva en Vinales.taxi
+Aún el cliente no ha recibido confirmación. Debera enviarle un mensaje
+
+Número de reserva: {{ booking.orderNumber }}
+
+Nombre del cliente: {{ booking.clientName }}
+
+Email del cliente: {{ booking.clientEmail }}
+
+Lugar: {{ booking.pickupPlace }}
+
+Detalles: {{ booking.pickupDetails }}
+
+Fecha: {{ booking.pickupTime ? booking.pickupDate|date('Y-m-d') : '' }} a las {{ booking.pickupTime ? booking.pickupTime|date('H:i:s') : '' }}.
+
+Mensaje del cliente: {{ booking.clientMessage }}
+
+********
+
+Idioma: {{ booking.bookingLang }}
+
+Fecha/Hora en que reserva: { booking.bookingTime ? booking.bookingTime|date('Y-m-d H:i:s') : '' }}
+
+Campaña: {{ booking.campaign }}
+
+[{{ absolute_url('booking_index') }}]Ver todas las reservast
+
+

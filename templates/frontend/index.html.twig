@@ -264,21 +264,7 @@
                 <div class="contact_faq__content__contact">
                     <h4>Send us a message</h4>
 
-                    <form action="" class="form">
-                        <div class="form__item">
-                            <label for="name">Your name</label>
-                            <input id="name" type="text" placeholder="your name" required>
-                        </div>
-                        <div class="form__item">
-                            <label for="email">Your email</label>
-                            <input id="email" type="email" placeholder="your email" required>
-                        </div>
-                        <div class="form__item">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" cols="30" rows="4" required placeholder="Your message"></textarea>
-                        </div>
-                        <input class="btn btn--primary-gradient" type="submit" value="Send message">
-                    </form>
+                    {{ form(form) }}
                 </div>
 
             </div>

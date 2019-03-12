@@ -56,24 +56,25 @@ class BookingController extends AbstractController
                 ->setFrom('booking@taxidriverscuba.com')
                 ->setTo('taxidriverscuba@gmail.com')
                 ->setCc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
+
+
                 ->setBody(
                     $this->renderView(
                     // templates/emails/registration.html.twig
                         'emails/bookingNotification.html.twig',
                         ['booking' => $booking]
                     ),
-                    'text/html'
+                    'text/html',
+                    'UTF-8'
                 )
-                /*
-                 * If you also want to include a plaintext version of the message
                 ->addPart(
                     $this->renderView(
-                        'emails/registration.txt.twig',
-                        ['name' => $name]
+                        'emails/bookingNotification.txt.twig',
+                        ['booking' => $booking]
                     ),
-                    'text/plain'
+                    'text/plain',
+                    'UTF-8'
                 )
-                */
             ;
 
             $mailer->send($message);
