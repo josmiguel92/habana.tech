@@ -1,0 +1,160 @@
+{% set val_sub_clausula = 1 %}
+<p style="text-align: center;">
+    <strong>
+        CLAUSULA {{ clausulas[val_clausula]}}
+    </strong>
+</p>
+<p style="text-align: center;">
+    <strong>
+        CONDICIONES Y FORMAS DE PAGO
+    </strong>
+</p>
+<p>
+    <strong>
+       {{val_clausula }}.{{val_sub_clausula}}
+       {% set val_sub_clausula = val_sub_clausula + 1 %}
+    </strong>
+     El pago del
+    <strong>
+        COMPRADOR
+    </strong>
+     al
+    <strong>
+        VENDEDOR
+    </strong>
+     del cien por ciento (100%) del valor total del suministros especificado en el
+    <strong>
+        Anexo No. 1 del presente Contrato
+    </strong>
+    , equivalente a
+    <strong>
+        {{ contract.precioCfr }}
+    </strong>,
+     se efectuar&aacute; mediante Carta de Cr&eacute;dito Irrevocable y No Confirmada, abierta en EUR por el Banco Internacional de Comercio (BICSA) a favor del Beneficiario,
+    {{ contract.vendedor | raw}}
+    , siendo pagadera {{ contract.tipoCartaCredito }}, con la presentaci&oacute;n del
+    <strong>
+        VENDEDOR
+    </strong>
+     al Banco de los documentos relacionados en el ac&aacute;pite 3.2.
+</p>
+<p>
+    <strong>
+       {{val_clausula }}.{{val_sub_clausula}}
+       {% set val_sub_clausula = val_sub_clausula + 1 %}
+    </strong>
+     El
+    <strong>
+        VENDEDOR
+    </strong>
+     presentar&aacute; al
+    <strong>
+        BANCO
+    </strong>
+     los siguientes documentos:
+</p>
+<ul>
+    <li>
+        <u>
+            Conocimiento de embarque
+        </u>
+        <u>
+            en tres (3) ejemplares: un (1) original y dos (2) copias no negociables,
+        </u>
+         marcados &ldquo;a bordo&rdquo; &ldquo;Flete pagado por anticipado&rdquo; y &ldquo;No permitidos trasbordos ni escalas en territorios de los Estados Unidos de Am&eacute;rica o que se encuentren bajo su jurisdicci&oacute;n y/o administraci&oacute;n&rdquo;, consignado al
+        <strong>
+            COMPRADOR
+        </strong>
+         fechado a m&aacute;s tardar en la fecha m&aacute;xima de embarque seg&uacute;n el ac&aacute;pite 4.1 del presente Contrato, evidenciando embarque desde el
+        <strong>
+            {{ contract.puertoOrigen }}
+        </strong>
+        , hasta el lugar de destino en
+        <strong>
+            Puerto de Mariel, Cuba.
+        </strong>
+    </li>
+    <li>
+        <u>
+            Factura comercial
+        </u>
+         en idioma espa&ntilde;ol, en cuatro (4) ejemplares (2 originales y 2 copias) debidamente firmadas y acu&ntilde;adas, detallando: n&uacute;mero de Contrato, n&uacute;mero de la Factura, fecha de emisi&oacute;n de la misma, descripci&oacute;n de las mercanc&iacute;as embarcadas, sus cantidades y sus precios unitarios e importes totales en la moneda del Contrato, evidenciando por separado el costo del Flete, as&iacute; como la condici&oacute;n de compra seg&uacute;n Contrato, el importe total CFR del embarque, el valor de la inspecci&oacute;n en origen por SIS CUBACONTROL S.A y el importe total e indicando adem&aacute;s el Puerto de origen de las mercanc&iacute;as.
+    </li>
+    <li>
+        <u>
+            Lista de empaque
+        </u>
+         o relaci&oacute;n de mercanc&iacute;a embarcadas, en idioma espa&ntilde;ol, en cuatro (4) ejemplares: 2 originales y 2 copias, indicando n&uacute;mero de la Factura a que corresponde, n&uacute;mero de cada bulto, descripci&oacute;n y cantidad de mercanc&iacute;as contenidos en cada bulto, cantidad total de bultos; as&iacute; como las dimensiones y los pesos netos y brutos de cada bulto y totales, todo desglosado por Contenedor.
+    </li>
+    <li>
+        <u>
+            Certificado de calidad
+        </u>
+         de las mercanc&iacute;as emitido por el fabricante (
+        <strong>
+            <u>
+                Original
+            </u>
+        </strong>
+        ).
+    </li>
+    <li>
+        <u>
+            Certificado de origen
+        </u>
+         en un (1) original y una (1) copia, emitido por la C&aacute;mara de Comercio en el pa&iacute;s de origen de las mercanc&iacute;as.
+    </li>
+    <li>
+        <u>
+            Original del Certificado de inspecci&oacute;n en origen
+        </u>
+         del cien por ciento (100%) del conteo de los bultos de las mercanc&iacute;as emitido por SIS CUBACONTROL S.A o una entidad facultada por &eacute;sta, para tales efectos, y la Factura
+        <strong>
+            <u>
+                original
+            </u>
+        </strong>
+         por los gastos del Servicio de Inspecci&oacute;n.
+    </li>
+    <li>
+        <strong>
+            <u>
+                Original
+            </u>
+        </strong>
+        <u>
+             de la factura del transportista,
+        </u>
+        evidenciando el costo real del flete.
+    </li>
+    <li>
+        <u>
+            Original del comprobante de env&iacute;o
+        </u>
+        <u>
+            al
+            <strong>
+                COMPRADOR
+            </strong>
+        </u>
+        <strong>
+            ,
+        </strong>
+         de un juego de la documentaci&oacute;n original del embarque, especificada en el ac&aacute;pite 3.3 de la presente Cl&aacute;usula por correo expreso, fechado no m&aacute;s tarde de los siete (7) d&iacute;as h&aacute;biles de la fecha del B/L.
+    </li>
+</ul>
+<p>
+    <strong>
+       {{val_clausula }}.{{val_sub_clausula}}
+       {% set val_sub_clausula = val_sub_clausula + 1 %}
+    </strong>
+    Los documentos que enviar&aacute; el
+    <strong>
+        VENDEDOR
+    </strong>
+     al
+    <strong>
+        COMPRADOR
+    </strong>
+     por correo expreso en el transcurso de los siete (7) d&iacute;as h&aacute;biles del B/L para facilitar al &uacute;ltimo hacer tr&aacute;mites aduanales ser&aacute;n: Conocimiento de embarque (BL) en dos (2) originales, Factura Comercial en un (1) original, un (1) original de la Lista de Empaque, un (1) original del Certificado de Calidad, una (1) copia del Certificado de Origen, una (1) copia del Certificado de Inspecci&oacute;n en origen emitido por SIS Cubacontrol S.A o su agente con una (1) copia de la Factura de los gastos de la Inspecci&oacute;n, evidenciado el costo real del servicio, una (1) copia de la Factura del Transportista, evidenciando el costo real del flete, una (1) copia del Certificado de Tratamiento Fitosanitario o de Fumigaci&oacute;n de los embalajes de madera.
+</p>

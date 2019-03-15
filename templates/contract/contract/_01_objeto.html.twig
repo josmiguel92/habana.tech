@@ -1,0 +1,37 @@
+{% set val_sub_clausula = 1 %}
+<p  style="text-align: center;">
+    <strong>
+        CLAUSULA {{ clausulas[val_clausula]}}
+    </strong>
+</p>
+<p  style="text-align: center;">
+    <strong>
+        OBJETO DEL CONTRATO
+    </strong>
+</p>
+<p>
+    <strong>
+       {{val_clausula }}.{{val_sub_clausula}}
+       {% set val_sub_clausula = val_sub_clausula + 1 %}
+    </strong>
+    El
+    <strong>
+        VENDEDOR
+    </strong>
+     conviene en vender al
+    <strong>
+        COMPRADOR
+    </strong>
+     y este en comprar a aqu&eacute;l bajo las condiciones aqu&iacute; estipuladas,
+    <strong>
+        {{ contract.objetoContrato }}
+    </strong>
+    <strong>
+        ,
+    </strong>
+    en las cantidades, caracter&iacute;sticas t&eacute;cnicas y precios que se indican en el
+    <strong>
+        Anexo No.1
+    </strong>
+     que forma parte integrante del presente
+</p>

@@ -1,0 +1,91 @@
+{% set val_sub_clausula = 1 %}
+<p style="text-align: center;">
+    <strong>
+        CLAUSULA {{ clausulas[val_clausula]}}
+    </strong>
+</p>
+<p style="text-align: center;">
+    <strong>
+        PRECIOS
+    </strong>
+</p>
+<p>
+    <strong>
+       {{val_clausula }}.{{val_sub_clausula}}
+       {% set val_sub_clausula = val_sub_clausula + 1 %}
+    </strong>
+        El valor total del presente Contrato en las condiciones de compraventa pactadas, incluyendo sus envases, as&iacute; como la inspecci&oacute;n de SIS Cubacontrol S.A. en origen, embalajes, marcas y cualquier otro gasto que surja antes que las mercanc&iacute;as pasen a propiedad del
+        <strong>
+            COMPRADOR
+        </strong>
+         asciende a la cantidad de
+        <strong>
+            {{ contract.precioCfr }}
+        </strong>
+         en condiciones
+        <strong>
+            CFR Puerto Mariel, Cuba
+        </strong>.
+    </p>
+
+<p>
+    <strong>
+       {{val_clausula }}.{{val_sub_clausula}}
+       {% set val_sub_clausula = val_sub_clausula + 1 %}
+    </strong>
+
+        El valor total de las mercanc&iacute;as para las cantidades indicadas en el
+        <strong>
+            Anexo No. 1
+        </strong>
+         adjunto al presente Contrato en condiciones
+        <strong>
+            CFR, Puerto Mariel, Cuba
+        </strong>
+         seg&uacute;n INCOTERMS 2010, asciende a la cantidad de
+        <strong>
+            {{ contract.precioSinInspeccion }}
+        </strong>
+         sin incluir el valor de la Inspecci&oacute;n de SIS Cubacontrol S.A.
+   
+</p>
+<p>
+    <strong>
+       {{val_clausula }}.{{val_sub_clausula}}
+       {% set val_sub_clausula = val_sub_clausula + 1 %}
+    </strong>
+        El importe por los gastos incurridos en la Inspecci&oacute;n de SIS Cubacontrol S.A. o su agente asciende a la cantidad de
+        <strong>
+            {{ contract.precioInspeccion }}
+        </strong>.
+    </p>
+<p>
+    <strong>
+       {{val_clausula }}.{{val_sub_clausula}}
+       {% set val_sub_clausula = val_sub_clausula + 1 %}
+    </strong>
+        El costo de Flete indicado en el
+        <strong>
+            Anexo No.1
+        </strong>
+         asciende a
+        <strong>
+           {{ contract.precioFlete }}
+        </strong>.
+        El pago del costo de flete se realizar&aacute; seg&uacute;n los costos reales indicados en la factura del transportista, siempre y cuando no exceda el valor pactado en el presente Contrato.
+    </p>
+<p>
+     <strong>
+       {{val_clausula }}.{{val_sub_clausula}}
+       {% set val_sub_clausula = val_sub_clausula + 1 %}
+    </strong>
+        Los precios establecidos en el
+        <strong>
+            Anexo No. 1
+        </strong>
+         del presente Contrato, se consideran fijos e inalterables, no sujetos a resbalamientos hasta cumplimentarse la entrega total de las mercanc&iacute;as relacionadas en el
+        <strong>
+            Anexo No.1
+        </strong>
+         del presente Contrato.
+    </p>

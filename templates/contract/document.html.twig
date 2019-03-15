@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contract{% endblock %}
+
+{% block body %}
+    <h1>Contract</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contract.id }}</td>
+            </tr>
+            <tr>
+                <th>Vendedor</th>
+                <td>{{ contract.vendedor }}</td>
+            </tr>
+            <tr>
+                <th>Representante_vendedor</th>
+                <td>{{ contract.representanteVendedor }}</td>
+            </tr>
+            <tr>
+                <th>Objeto_contrato</th>
+                <td>{{ contract.objetoContrato }}</td>
+            </tr>
+            <tr>
+                <th>Precio_cfr</th>
+                <td>{{ contract.precioCfr }}</td>
+            </tr>
+            <tr>
+                <th>Precio_sin_inspeccion</th>
+                <td>{{ contract.precioSinInspeccion }}</td>
+            </tr>
+            <tr>
+                <th>Precio_inspeccion</th>
+                <td>{{ contract.precioInspeccion }}</td>
+            </tr>
+            <tr>
+                <th>Precio_flete</th>
+                <td>{{ contract.precioFlete }}</td>
+            </tr>
+            <tr>
+                <th>Moneda</th>
+                <td>{{ contract.moneda }}</td>
+            </tr>
+            <tr>
+                <th>Tipo_carta_credito</th>
+                <td>{{ contract.tipoCartaCredito }}</td>
+            </tr>
+            <tr>
+                <th>Puerto_origen</th>
+                <td>{{ contract.puertoOrigen }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad_embarques</th>
+                <td>{{ contract.cantidadEmbarques }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad_contenedores</th>
+                <td>{{ contract.cantidadContenedores }}</td>
+            </tr>
+            <tr>
+                <th>Tiempo_entrega</th>
+                <td>{{ contract.tiempoEntrega }}</td>
+            </tr>
+            <tr>
+                <th>Correo_comprador</th>
+                <td>{{ contract.correoComprador }}</td>
+            </tr>
+            <tr>
+                <th>Tiempo_garantia</th>
+                <td>{{ contract.tiempoGarantia }}</td>
+            </tr>
+            <tr>
+                <th>Nombre_vendedor</th>
+                <td>{{ contract.nombreVendedor }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('contract_index') }}">back to list</a>
+
+    <a href="{{ path('contract_edit', {'id': contract.id}) }}">edit</a>
+
+    {{ include('contract/_delete_form.html.twig') }}
+{% endblock %}
